@@ -1,0 +1,48 @@
+{
+  "name": "module-name",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint": "standard --fix",
+    "test": "ava",
+    "test:watch": "ava --watch",
+    "test:coverage": "nyc ava",
+    "commit": "git-cz",
+    "docs": "npm run docs:code && npm run docs:api",
+    "docs:api": "doxdox *.js --layout bootstrap --output docs/index.html",
+    "docs:code": "docco *.js --output docs/code"
+  },
+  "author": "Liran Tal",
+  "license": "MIT",
+  "dependencies": {
+    "docco": "^0.7.0",
+    "request": "^2.79.0"
+  },
+  "devDependencies": {
+    "ava": "^0.17.0",
+    "commitizen": "^2.9.5",
+    "cz-conventional-changelog": "^1.2.0",
+    "doxdox": "^2.0.1",
+    "nock": "^9.0.2",
+    "nyc": "^10.1.2",
+    "standard": "^8.6.0"
+  },
+  "nyc": {
+    "statements": 90,
+    "branches": 90,
+    "functions": 90,
+    "lines": 90,
+    "reporter": [
+      "lcov",
+      "text-summary"
+    ],
+    "cache": true,
+    "check-coverage": true
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
