@@ -15,18 +15,14 @@
   },
   "author": "Liran Tal",
   "license": "MIT",
-  "dependencies": {
-    "docco": "^0.7.0",
-    "request": "^2.79.0"
-  },
   "devDependencies": {
     "ava": "^0.17.0",
     "commitizen": "^2.9.5",
     "cz-conventional-changelog": "^1.2.0",
     "doxdox": "^2.0.1",
-    "nock": "^9.0.2",
     "nyc": "^10.1.2",
-    "standard": "^8.6.0"
+    "standard": "^8.6.0",
+    "docco": "^0.7.0"
   },
   "nyc": {
     "statements": 90,
