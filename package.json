@@ -4,12 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "lint": "standard --fix",
+    "lint": "eslint *.js",
     "test": "ava",
     "test:watch": "ava --watch",
-    "test:coverage": "nyc ava",
+    "test:coverage": "yarn run lint && nyc --reporter=lcov ava --tap",
     "commit": "git-cz",
-    "docs": "npm run docs:code && npm run docs:api",
+    "docs": "yarn run docs:code && yarn run docs:api",
     "docs:api": "doxdox *.js --layout bootstrap --output docs/index.html",
     "docs:code": "docco *.js --output docs/code"
   },
@@ -39,6 +39,43 @@
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "eslintConfig": {
+    "env": {
+      "node": true,
+      "es6": true
+    },
+    "plugins": [
+      "node",
+      "security",
+      "ava"
+    ],
+    "extends": [
+      "eslint-config-standard",
+      "plugin:ava/recommended",
+      "plugin:node/recommended"
+    ],
+    "rules": {
+      "node/no-unsupported-features": "off",
+      "node/no-unpublished-require": "off",
+      "security/detect-non-literal-fs-filename": "error",
+      "security/detect-unsafe-regex": "error",
+      "security/detect-buffer-noassert": "error",
+      "security/detect-child-process": "error",
+      "security/detect-disable-mustache-escape": "error",
+      "security/detect-eval-with-expression": "error",
+      "security/detect-no-csrf-before-method-override": "error",
+      "security/detect-non-literal-regexp": "error",
+      "security/detect-non-literal-require": "error",
+      "security/detect-object-injection": "error",
+      "security/detect-possible-timing-attacks": "error",
+      "security/detect-pseudoRandomBytes": "error"
+    },
+    "parserOptions": {
+      "ecmaFeatures": {
+        "impliedStrict": true
+      }
     }
   }
 }
