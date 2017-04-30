@@ -8,7 +8,7 @@
     "test": "ava",
     "test:watch": "ava --watch",
     "test:coverage": "yarn run lint && nyc --reporter=lcov ava --tap",
-    "test:coverage:view": "opn coverage/lcov-report/index.html",
+    "coverage:view": "opn coverage/lcov-report/index.html",
     "commit": "git-cz",
     "docs": "yarn run docs:code && yarn run docs:api",
     "docs:api": "doxdox *.js --layout bootstrap --output docs/index.html",
