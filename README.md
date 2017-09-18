@@ -1,21 +1,11 @@
 # Module Name
 
-## What is this?
-
 @TODO
 
 ## Installation
 
-Bold people use:
-
 ```bash
-yarn add <something>
-```
-
-The rest can use the mundane:
-
-```bash
-npm install --save <something>
+yarn add <module-name>
 ```
 
 ## Usage
@@ -27,27 +17,29 @@ npm install --save <something>
 Project tests:
 
 ```bash
-npm run test
+yarn run test
 ```
 
 Project linting:
 
 ```bash
-npm run lint
+yarn run lint
 ```
 
 ## Coverage
 
 ```bash
-npm run test:coverage
+yarn run test:coverage
 ```
 
-## Commit
+## Contributing
+
+### Commit Guidelines
 
 The project uses the commitizen tool for standardizing changelog style commit
 messages so you should follow it as so:
 
 ```bash
 git add .           # add files to staging
-npm run commit      # use the wizard for the commit message
+yarn run commit      # use the wizard for the commit message
 ```
