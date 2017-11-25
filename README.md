@@ -1,5 +1,7 @@
 # Module Name
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/lirantal/npm-starter.svg)](https://greenkeeper.io/)
+
 @TODO
 
 ## Installation
