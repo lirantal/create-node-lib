@@ -18,6 +18,8 @@
   "author": "Liran Tal",
   "license": "MIT",
   "devDependencies": {
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-es2015": "^6.24.1",
     "commitizen": "^2.9.5",
     "cz-conventional-changelog": "^1.2.0",
     "docco": "^0.7.0",
@@ -47,6 +49,12 @@
     },
     "testPathIgnorePatterns": [
       "/__tests__/__fixtures__/*"
+    ]
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "env"
     ]
   },
   "config": {
