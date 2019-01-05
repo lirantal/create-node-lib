@@ -1,4 +1,3 @@
-
 [![Security Responsible Disclosure](https://img.shields.io/badge/Security-Responsible%20Disclosure-yellow.svg)](https://github.com/nodejs/security-wg/blob/master/processes/responsible_disclosure_template.md)
 
 # Module Name
@@ -8,7 +7,7 @@
 ## Installation
 
 ```bash
-yarn add <module-name>
+npm add <module-name>
 ```
 
 ## Usage
@@ -20,19 +19,19 @@ yarn add <module-name>
 Project tests:
 
 ```bash
-yarn run test
+npm run test
 ```
 
 Project linting:
 
 ```bash
-yarn run lint
+npm run lint
 ```
 
 ## Coverage
 
 ```bash
-yarn run test:coverage
+npm run test:coverage
 ```
 
 ## Contributing
@@ -44,5 +43,5 @@ messages so you should follow it as so:
 
 ```bash
 git add .           # add files to staging
-yarn run commit      # use the wizard for the commit message
+npm run commit      # use the wizard for the commit message
 ```

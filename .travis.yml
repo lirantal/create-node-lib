@@ -1,15 +1,14 @@
 language: node_js
 node_js:
   - "8"
-  - "6"
   - "10"
 before_script:
-  - yarn run lint
+  - npm run lint
 install:
-  - yarn install --ignore-engines
-  - yarn global add codecov
+  - npm install --ignore-engines
+  - npm global add codecov
 script:
-  - yarn run test
+  - npm test
   - codecov
 after_success:
-  - yarn run semantic-release
+  - npm run semantic-release
