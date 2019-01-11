@@ -27,12 +27,16 @@
 npm install --save <%= projectName %>
 ```
 
-# Example
+# Usage
 
 ```js
 // @TODO
 const {} = require('<%= projectName %>')
 ```
+
+# Example
+
+<!-- TODO -->
 
 # Contributing
 
