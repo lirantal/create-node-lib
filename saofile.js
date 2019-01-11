@@ -1,4 +1,4 @@
-const path = require('path')
+'use strict'
 const validateNpmPackageName = require('validate-npm-package-name')
 
 module.exports = {
@@ -58,7 +58,7 @@ module.exports = {
         name: 'projectRepository',
         message: 'The URL of the repository',
         default({username, projectName}) {
-          return `https://www.github.com/${usermae}/${projectName}`
+          return `https://www.github.com/${username}/${projectName}`
         },
         store: true
       }
