@@ -5,13 +5,7 @@
   },
   "source": {
     "include": ["./index.js"],
-    "exclude": [
-      "./node_modules",
-      "./.nyc_output",
-      "./coverage",
-      "./out",
-      "./tests"
-    ],
+    "exclude": ["./node_modules", "./.nyc_output", "./coverage", "./out", "./tests"],
     "includePattern": ".+\\.js(doc|x)?$",
     "excludePattern": "(^|\\/|\\\\)_"
   },

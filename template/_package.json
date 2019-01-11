@@ -1,8 +1,8 @@
 {
-  "name": "create-node-lib",
-  "version": "2.0.0",
-  "description": "Scaffolding out a Node.js library module",
-  "bin": "./bin/cli.js",
+  "name": "<%= projectName %>",
+  "version": "0.0.0-development",
+  "description": "<%= description %>",
+  "main": "index.js",
   "engines": {
     "node": ">=8.0.0"
   },
@@ -20,31 +20,22 @@
     "semantic-release": "semantic-release"
   },
   "author": {
-    "name": "Liran Tal",
-    "email": "liran.tal@gmail.com",
-    "url": "https://github.com/lirantal"
+    "name": "<%= author %>",
+    "email": "<%= email %>",
+    "url": "https://github.com/<%= username %>"
   },
   "license": "Apache-2.0",
-  "keywords": [
-    "create-node-lib",
-    "create-node",
-    "create",
-    "module",
-    "sao-generator",
-    "sao",
-    "scaffolding"
-  ],
-  "homepage": "https://github.com/lirantal/create-node-lib",
+  "keywords": ["<%= keywords %>"],
+  "homepage": "<%= projectRepository %>",
   "bugs": {
-    "url": "https://github.com/lirantal/create-node-lib/issues"
+    "url": "<%= projectRepository %>/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lirantal/npm-starter.git"
+    "url": "<%= projectRepository %>.git"
   },
   "dependencies": {
-    "sao": "^1.6.1",
-    "validate-npm-package-name": "^3.0.0"
+    "debug": "^4.1.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^7.2.1",
@@ -56,7 +47,7 @@
     "babel-preset-es2015": "^6.24.1",
     "commitizen": "^2.9.5",
     "cz-conventional-changelog": "^1.2.0",
-    "docco": "^0.7.0",
+    "docco": "^0.8.0",
     "doxdox": "^2.0.1",
     "eslint": "^5.10.0",
     "eslint-config-standard": "^12.0.0",
@@ -71,7 +62,7 @@
     "lint-staged": "^8.1.0",
     "opn-cli": "^3.1.0",
     "prettier-standard": "^8.0.1",
-    "semantic-release": "^11.0.2"
+    "semantic-release": "^15.3.2"
   },
   "jest": {
     "testEnvironment": "node",
@@ -86,16 +77,12 @@
         "statements": 80
       }
     },
-    "testPathIgnorePatterns": [
-      "/__tests__/.*/__fixtures__/.*"
-    ],
+    "testPathIgnorePatterns": ["/__tests__/.*/__fixtures__/.*"],
     "coveragePathIgnorePatterns": [
       "/__tests__/.*/__fixtures__/.*",
       "/__tests__/.*/__snapshots__/.*"
     ],
-    "testMatch": [
-      "**/*.test.js"
-    ]
+    "testMatch": ["**/*.test.js"]
   },
   "husky": {
     "hooks": {
@@ -107,16 +94,11 @@
   },
   "lint-staged": {
     "linters": {
-      "**/*.js": [
-        "prettier-standard",
-        "git add"
-      ]
+      "**/*.js": ["prettier-standard", "git add"]
     }
   },
   "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
+    "extends": ["@commitlint/config-conventional"]
   },
   "config": {
     "commitizen": {
@@ -124,35 +106,19 @@
     }
   },
   "standard": {
-    "env": [
-      "jest"
-    ],
+    "env": ["jest"],
     "parser": "babel-eslint",
-    "ignore": [
-      "**/out/"
-    ]
+    "ignore": ["**/out/"]
   },
-  "eslintIgnore": [
-    "coverage/**",
-    "template/**"
-  ],
+  "eslintIgnore": ["coverage/**"],
   "eslintConfig": {
     "env": {
       "node": true,
       "es6": true,
       "jest": true
     },
-    "plugins": [
-      "import",
-      "standard",
-      "node",
-      "security",
-      "jest"
-    ],
-    "extends": [
-      "standard",
-      "plugin:node/recommended"
-    ],
+    "plugins": ["import", "standard", "node", "security", "jest"],
+    "extends": ["standard", "plugin:node/recommended"],
     "rules": {
       "no-process-exit": "warn",
       "jest/no-disabled-tests": "error",
