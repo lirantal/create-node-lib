@@ -17,22 +17,23 @@
 
 # About
 
-create-node-lib
-
 Scaffold a batteries-included Node.js library project with docs, tests, semantic releases and more.
 
 # Install
 
+Generate a new project for the library by running one of the following executors built into npm and yarn:
+
 ```bash
-npm install --save create-node-lib
+npx create-node-lib my-cool-lib-name
 ```
 
-# Usage
+or if you're using yarn
 
-```js
-// @TODO
-const {} = require('create-node-lib')
+```bash
+yarn create node-lib my-cool-lib-name
 ```
+
+<img width="675" src="https://user-images.githubusercontent.com/316371/51207479-91a39280-1913-11e9-9527-1b77bf0abb54.png">
 
 # Contributing
 
