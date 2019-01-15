@@ -40,4 +40,4 @@ Please consult [CONTIRBUTING](./CONTRIBUTING.md) for guidelines on contributing 
 
 # Author
 
-**create-node-lib** © [<%= author %>](https://github.com/lirantal), Released under the [Apache-2.0](./LICENSE) License.<br>
+**create-node-lib** © [Liran Tal](https://github.com/lirantal), Released under the [Apache-2.0](./LICENSE) License.<br>

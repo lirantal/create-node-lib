@@ -5,13 +5,8 @@ const template = path.join(__dirname, '..')
 
 describe('all the template files are accountable for', () => {
   test('generator contains github templates', async () => {
-    const stream = await sao.mock(
-      {generator: template},
-      {
-        features: ['linter'],
-        linterConfig: 'xo'
-      }
-    )
+    jest.setTimeout(15000)
+    const stream = await sao.mock({generator: template})
     expect(stream.fileList).toContain('.github/ISSUE_TEMPLATE.md')
     expect(stream.fileList).toContain('.github/ISSUE_TEMPLATE/1-bug-report.md')
     expect(stream.fileList).toContain('.github/ISSUE_TEMPLATE/2-feature-request.md')

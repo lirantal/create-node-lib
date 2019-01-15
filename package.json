@@ -1,6 +1,6 @@
 {
   "name": "create-node-lib",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "Scaffolding out a Node.js library module",
   "bin": "./bin/cli.js",
   "engines": {
@@ -69,7 +69,7 @@
     "eslint-plugin-security": "^1.4.0",
     "eslint-plugin-standard": "^4.0.0",
     "husky": "^1.2.1",
-    "jest": "23.6",
+    "jest": "^23.6.0",
     "lint-staged": "^8.1.0",
     "opn-cli": "^3.1.0",
     "prettier-standard": "^8.0.1",
