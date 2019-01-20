@@ -44,4 +44,4 @@ Please consult [CONTIRBUTING](./CONTRIBUTING.md) for guidelines on contributing 
 
 # Author
 
-**<%= projectName %>** © [<%= author %>](https://github.com/<%= username %>), Released under the [Apache-2.0](./LICENSE) License.<br>
+**<%= projectName %>** © [<%= author %>](https://github.com/<%= username %>), Released under the [Apache-2.0](./LICENSE) License.
