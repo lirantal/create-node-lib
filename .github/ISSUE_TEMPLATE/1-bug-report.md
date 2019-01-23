@@ -1,3 +1,8 @@
+---
+name: "\U0001F41B Bug report"
+about: Create a bug report
+---
+
 <!--- Provide a general summary of the issue in the Title above -->
 
 ## Expected Behavior
