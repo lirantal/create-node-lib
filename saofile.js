@@ -58,7 +58,7 @@ module.exports = {
         name: 'projectRepository',
         message: 'The URL of the repository',
         default({username, projectName}) {
-          return `https://www.github.com/${username}/${projectName}`
+          return `https://github.com/${username}/${projectName}`
         },
         store: true
       }
