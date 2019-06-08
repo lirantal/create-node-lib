@@ -77,12 +77,16 @@
         "statements": 80
       }
     },
-    "testPathIgnorePatterns": ["/__tests__/.*/__fixtures__/.*"],
-    "coveragePathIgnorePatterns": [
-      "/__tests__/.*/__fixtures__/.*",
-      "/__tests__/.*/__snapshots__/.*"
+    "testPathIgnorePatterns": [
+      "/__tests__/.*/__fixtures__/.*"
     ],
-    "testMatch": ["**/*.test.js"]
+    "collectCoverageFrom": [
+      "index.js",
+      "src/**/*.{js,ts}"
+    ],
+    "testMatch": [
+      "**/*.test.js"
+    ]
   },
   "husky": {
     "hooks": {
