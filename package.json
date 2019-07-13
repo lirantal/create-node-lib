@@ -13,10 +13,6 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "coverage:view": "open-cli coverage/lcov-report/index.html",
-    "commit": "git-cz",
-    "docs": "npm run docs:code && npm run docs:api",
-    "docs:api": "doxdox *.js --layout bootstrap --output docs/index.html",
-    "docs:code": "docco *.js --output docs/code",
     "semantic-release": "semantic-release"
   },
   "author": {
@@ -45,7 +41,6 @@
     "url": "https://github.com/lirantal/create-node-lib.git"
   },
   "dependencies": {
-    "open-cli": "^5.0.0",
     "validate-npm-package-name": "^3.0.0"
   },
   "devDependencies": {
@@ -56,24 +51,22 @@
     "babel-plugin-transform-regenerator": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-es2015": "^6.24.1",
-    "commitizen": "^3.1.1",
     "cz-conventional-changelog": "^2.1.0",
-    "docco": "^0.7.0",
-    "doxdox": "^2.0.1",
-    "eslint": "^5.16.0",
-    "eslint-config-standard": "^12.0.0",
+    "eslint": "^6.0.1",
+    "eslint-config-standard": "^13.0.1",
     "eslint-plugin-import": "^2.18.0",
     "eslint-plugin-jest": "^22.7.2",
     "eslint-plugin-node": "^9.1.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-security": "^1.4.0",
     "eslint-plugin-standard": "^4.0.0",
-    "husky": "^2.7.0",
+    "husky": "^3.0.0",
     "jest": "^24.8.0",
-    "lint-staged": "^8.2.1",
+    "lint-staged": "^9.2.0",
+    "open-cli": "^5.0.0",
     "prettier-standard": "^9.1.1",
     "sao": "^1.6.1",
-    "semantic-release": "^11.0.2"
+    "semantic-release": "^15.3.2"
   },
   "jest": {
     "testEnvironment": "node",
@@ -109,22 +102,15 @@
     }
   },
   "lint-staged": {
-    "linters": {
-      "**/*.js": [
-        "prettier-standard",
-        "git add"
-      ]
-    }
+    "**/*.js": [
+      "prettier-standard",
+      "git add"
+    ]
   },
   "commitlint": {
     "extends": [
       "@commitlint/config-conventional"
     ]
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
   },
   "standard": {
     "env": [
