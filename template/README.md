@@ -13,7 +13,7 @@
   <a href="https://travis-ci.org/<%= username %>/<%= projectName %>"><img src="https://badgen.net/travis/<%= username %>/<%= projectName %>" alt="build"/></a>
   <a href="https://codecov.io/gh/<%= username %>/<%= projectName %>"><img src="https://badgen.net/codecov/c/github/<%= username %>/<%= projectName %>" alt="codecov"/></a>
   <a href="https://snyk.io/test/github/<%= username %>/<%= projectName %>"><img src="https://snyk.io/test/github/<%= username %>/<%= projectName %>/badge.svg" alt="Known Vulnerabilities"/></a>
-  <a href="https://github.com/nodejs/security-wg/blob/master/processes/responsible_disclosure_template.md"><img src="https://img.shields.io/badge/Security-Responsible%20Disclosure-yellow.svg" alt="Security Responsible Disclosure" /></a>
+  <a href="./SECURITY.md"><img src="https://img.shields.io/badge/Security-Responsible%20Disclosure-yellow.svg" alt="Responsible Disclosure Policy" /></a>
 </p>
 
 # About
