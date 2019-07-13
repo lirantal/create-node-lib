@@ -90,12 +90,10 @@
     }
   },
   "lint-staged": {
-    "linters": {
-      "**/*.js": [
-        "prettier-standard",
-        "git add"
-      ]
-    }
+    "**/*.js": [
+      "prettier-standard",
+      "git add"
+    ]
   },
   "commitlint": {
     "extends": [
