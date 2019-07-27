@@ -41,7 +41,8 @@
     "url": "https://github.com/lirantal/create-node-lib.git"
   },
   "dependencies": {
-    "validate-npm-package-name": "^3.0.0"
+    "validate-npm-package-name": "^3.0.0",
+    "sao": "^1.6.1"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.0.0",
@@ -71,7 +72,6 @@
     "lint-staged": "^9.2.0",
     "open-cli": "^5.0.0",
     "prettier-standard": "^9.1.1",
-    "sao": "^1.6.1",
     "semantic-release": "^15.3.2"
   },
   "jest": {
