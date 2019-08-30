@@ -7,7 +7,7 @@
     "node": ">=8.0.0"
   },
   "scripts": {
-    "lint": "eslint .",
+    "lint": "eslint . && npm run lint:lockfile",
     "lint:lockfile": "lockfile-lint --path package-lock.json --type npm --validate-https --allowed-hosts npm yarn",
     "lint:fix": "eslint . --fix",
     "format": "prettier-standard '**/*.js'",
