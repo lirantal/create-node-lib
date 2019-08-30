@@ -8,6 +8,7 @@
   },
   "scripts": {
     "lint": "eslint .",
+    "lint:lockfile": "lockfile-lint --path package-lock.json --type npm --validate-https --allowed-hosts npm yarn",
     "lint:fix": "eslint . --fix",
     "format": "prettier-standard '**/*.js'",
     "test": "jest",
@@ -58,6 +59,7 @@
     "husky": "^3.0.0",
     "jest": "^24.8.0",
     "lint-staged": "^9.2.0",
+    "lockfile-lint": "^2.0.1",
     "open-cli": "^5.0.0",
     "prettier-standard": "^9.1.1",
     "semantic-release": "^15.13.19"
