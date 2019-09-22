@@ -6,7 +6,7 @@ const template = path.join(__dirname, '..')
 describe('all the template files are accountable for', () => {
   test('generator contains github templates', async () => {
     jest.setTimeout(15000)
-    const stream = await sao.mock({generator: template})
+    const stream = await sao.mock({ generator: template })
     expect(stream.fileList).toContain('.github/ISSUE_TEMPLATE.md')
     expect(stream.fileList).toContain('.github/ISSUE_TEMPLATE/1-bug-report.md')
     expect(stream.fileList).toContain('.github/ISSUE_TEMPLATE/2-feature-request.md')
@@ -16,7 +16,7 @@ describe('all the template files are accountable for', () => {
 
   test('generator contains project files', async () => {
     const stream = await sao.mock(
-      {generator: template},
+      { generator: template },
       {
         features: ['linter'],
         linterConfig: 'xo'
@@ -46,7 +46,7 @@ describe('all the template files are accountable for', () => {
     const mockProjectRepository = 'https://www.github.com/alice/inchains.git'
 
     const stream = await sao.mock(
-      {generator: template},
+      { generator: template },
       {
         keywords: [mockProjectKeywords],
         projectName: mockProjectName,
