@@ -42,7 +42,7 @@
     "url": "https://github.com/lirantal/create-node-lib.git"
   },
   "dependencies": {
-    "sao": "^1.6.1",
+    "sao": "^1.7.0",
     "validate-npm-package-name": "^3.0.0"
   },
   "devDependencies": {
