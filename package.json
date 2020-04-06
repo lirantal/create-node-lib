@@ -4,7 +4,7 @@
   "description": "Scaffolding out a Node.js library module",
   "bin": "./bin/cli.js",
   "engines": {
-    "node": ">=8.0.0"
+    "node": ">=10.0.0"
   },
   "scripts": {
     "lint": "eslint . && npm run lint:lockfile",
