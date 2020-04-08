@@ -6,6 +6,6 @@ const sao = require('sao')
 
 const generator = path.resolve(__dirname, '../')
 const outDir = path.resolve(process.argv[2] || '.')
-sao({ generator, outDir, npmClient: 'npm' })
+sao({ generator, outDir })
   .run()
   .catch(sao.handleError)

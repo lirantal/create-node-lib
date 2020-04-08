@@ -7,8 +7,8 @@
     "node": ">=10.0.0"
   },
   "scripts": {
-    "lint": "eslint . && npm run lint:lockfile",
-    "lint:lockfile": "lockfile-lint --path package-lock.json --type npm --validate-https --allowed-hosts npm yarn",
+    "lint": "eslint . && <%= npmClient %> run lint:lockfile",
+    "lint:lockfile": "lockfile-lint --path package-lock.json --type <%= npmClient %> --validate-https --allowed-hosts npm yarn",
     "lint:fix": "eslint . --fix",
     "format": "prettier --config .prettierrc.js --write '**/*.js'",
     "test": "jest",
@@ -92,13 +92,13 @@
     "hooks": {
       "commit-msg": "commitlint --env HUSKY_GIT_PARAMS",
       "pre-commit": "lint-staged",
-      "post-merge": "npm install",
-      "pre-push": "npm run lint && npm run test"
+      "post-merge": "<%= npmClient %> install",
+      "pre-push": "<%= npmClient %> run lint && <%= npmClient %> run test"
     }
   },
   "lint-staged": {
     "**/*.js": [
-      "npm run format",
+      "<%= npmClient %> run format",
       "git add"
     ]
   },
@@ -193,7 +193,7 @@
         "changelogFile": "CHANGELOG.md"
       }
     ],
-    "@semantic-release/npm",
+    "@semantic-release/<%= npmClient %>",
     [
       "@semantic-release/git",
       {

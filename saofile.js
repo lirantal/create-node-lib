@@ -1,6 +1,8 @@
 'use strict'
 const validateNpmPackageName = require('validate-npm-package-name')
 
+const SUPPORTED_NPM_CLIENTS = ['npm', 'yarn']
+
 module.exports = {
   description: 'Scaffolding out a node library.',
   templateData: {
@@ -8,6 +10,13 @@ module.exports = {
   },
   prompts() {
     return [
+      {
+        name: 'npmClient',
+        message: 'Which package manager do you want to use?',
+        default: 'npm',
+        type: 'list',
+        choices: SUPPORTED_NPM_CLIENTS
+      },
       {
         name: 'projectName',
         message: 'What is the name of the new project',
@@ -82,7 +91,7 @@ module.exports = {
   },
   async completed() {
     this.gitInit()
-    await this.npmInstall()
+    await this.npmInstall({ npmClient: this.answers.npmClient })
     this.showProjectTips()
 
     this.logger.tip(`You're all setup. hack away!`)

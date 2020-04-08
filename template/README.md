@@ -25,7 +25,7 @@
 # Install
 
 ```bash
-npm install --save <%= projectName %>
+<%= npmClient %> install --save <%= projectName %>
 ```
 
 # Usage
