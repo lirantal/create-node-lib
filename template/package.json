@@ -8,7 +8,6 @@
   },
   "scripts": {
     "lint": "eslint . && <%= npmClient %> run lint:lockfile",
-    "lint:lockfile": "lockfile-lint --path package-lock.json --type <%= npmClient %> --validate-https --allowed-hosts npm yarn",
     "lint:fix": "eslint . --fix",
     "format": "prettier --config .prettierrc.js --write '**/*.js'",
     "test": "jest",
@@ -193,7 +192,7 @@
         "changelogFile": "CHANGELOG.md"
       }
     ],
-    "@semantic-release/<%= npmClient %>",
+    "@semantic-release/npm",
     [
       "@semantic-release/git",
       {

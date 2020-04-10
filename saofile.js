@@ -74,11 +74,22 @@ module.exports = {
     ]
   },
   actions() {
+    const lockfile = this.answers.npmClient === 'npm' ? 'package-lock.json' : 'yarn.lock'
     return [
       {
         type: 'add',
         templateDir: 'template',
         files: '**'
+      },
+      {
+        type: 'modify',
+        files: 'package.json',
+        handler(data, filepath) {
+          data.scripts[
+            'lint:lockfile'
+          ] = `lockfile-lint --path ${lockfile} --type <%= npmClient %> --validate-https --allowed-hosts npm yarn`
+          return data
+        }
       },
       {
         type: 'move',
