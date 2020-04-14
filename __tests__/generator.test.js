@@ -44,6 +44,10 @@ describe('all the template files are accountable for', () => {
     const mockUsername = 'alice'
     const mockUserEmail = 'alice@inchains.com'
     const mockProjectRepository = 'https://www.github.com/alice/inchains.git'
+    const mockScripts = {
+      'lint:lockfile':
+        'lockfile-lint --path package-lock.json --type <%= npmClient %> --validate-https --allowed-hosts npm yarn'
+    }
 
     const stream = await sao.mock(
       { generator: template },
@@ -65,5 +69,25 @@ describe('all the template files are accountable for', () => {
     expect(pkg.author.email).toBe(mockUserEmail)
     expect(pkg.homepage).toBe(mockProjectRepository)
     expect(pkg.keywords).toEqual(mockProjectKeywords)
+    // Testing only variable scripts
+    expect(pkg.scripts['lint:lockfile']).toEqual(mockScripts['lint:lockfile'])
+  })
+
+  test('Generator input creates correct package.json scripts with yarn as client', async () => {
+    const mockScripts = {
+      'lint:lockfile':
+        'lockfile-lint --path yarn.lock --type <%= npmClient %> --validate-https --allowed-hosts npm yarn'
+    }
+
+    const stream = await sao.mock(
+      { generator: template },
+      {
+        npmClient: 'yarn'
+      }
+    )
+
+    const pkg = JSON.parse(await stream.readFile('package.json'))
+    // Testing only variable scripts
+    expect(pkg.scripts['lint:lockfile']).toEqual(mockScripts['lint:lockfile'])
   })
 })
