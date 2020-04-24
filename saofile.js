@@ -87,7 +87,7 @@ module.exports = {
         handler(data, filepath) {
           data.scripts[
             'lint:lockfile'
-          ] = `lockfile-lint --path ${lockfile} --type <%= npmClient %> --validate-https --allowed-hosts npm yarn`
+          ] = `lockfile-lint --path ${lockfile} --validate-https --allowed-hosts npm yarn`
           return data
         }
       },
