@@ -1,3 +1,5 @@
+<% const npmClientInstall = context.npmClient === 'npm' ? 'install --save' : 'add' -%>
+
 <p align="center"><h1 align="center">
   <%= projectName %>
 </h1>
@@ -25,7 +27,7 @@
 # Install
 
 ```bash
-<%= npmClient %> install --save <%= projectName %>
+<%= npmClient %> <%= npmClientInstall %> <%= projectName %>
 ```
 
 # Usage
