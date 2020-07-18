@@ -1,5 +1,5 @@
 'use strict'
 
-const app = require('src')
+const app = require('./src')
 
 module.exports = {}
