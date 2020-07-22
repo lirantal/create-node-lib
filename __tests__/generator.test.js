@@ -25,7 +25,7 @@ describe('all the template files are accountable for', () => {
 
     expect(stream.fileList).toContain('.gitignore')
     expect(stream.fileList).toContain('.prettierrc.js')
-    expect(stream.fileList).toContain('.travis.yml')
+    expect(stream.fileList).toContain('.github/workflows/main.yml')
     expect(stream.fileList).toContain('CODE_OF_CONDUCT.md')
     expect(stream.fileList).toContain('CONTRIBUTING.md')
     expect(stream.fileList).toContain('LICENSE')
