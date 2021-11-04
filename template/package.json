@@ -2,18 +2,30 @@
   "name": "<%= projectName %>",
   "version": "0.0.0-development",
   "description": "<%= description %>",
-  "main": "index.js",
-  "engines": {
-    "node": ">=10.0.0"
+  "main": "main.js",
+  "bin": {
+    "cli": "bin/cli.js"
   },
+  "exports": {
+    ".": "./src/main.js"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "type": "module",
+  "files": [
+    "src",
+    "bin"
+  ],
   "scripts": {
     "lint": "eslint . && <%= npmClient %> run lint:lockfile",
     "lint:fix": "eslint . --fix",
     "format": "prettier --config .prettierrc.json --write '**/*.js'",
-    "test": "jest",
-    "test:watch": "jest --watch",
+    "test": "NODE_OPTIONS=--experimental-vm-modules npx jest",
+    "test:watch": "NODE_OPTIONS=--experimental-vm-modules npx jest --watch",
     "coverage:view": "open-cli coverage/lcov-report/index.html",
-    "semantic-release": "semantic-release"
+    "semantic-release": "npx semantic-release",
+    "prepare": "husky install"
   },
   "author": {
     "name": "<%= author %>",
@@ -38,33 +50,28 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@commitlint/cli": "^9.1.2",
-    "@commitlint/config-conventional": "^7.1.2",
-    "@semantic-release/changelog": "^3.0.4",
-    "@semantic-release/commit-analyzer": "^6.2.0",
-    "@semantic-release/git": "^7.0.16",
-    "@semantic-release/github": "^5.4.2",
-    "@semantic-release/npm": "^7.1.0",
-    "@semantic-release/release-notes-generator": "^7.2.1",
-    "babel-eslint": "^10.0.1",
-    "babel-plugin-syntax-async-functions": "^6.13.0",
-    "babel-plugin-transform-regenerator": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
-    "decompress": "^4.2.1",
-    "eslint": "^6.0.1",
-    "eslint-config-standard": "^13.0.1",
-    "eslint-plugin-import": "^2.18.0",
-    "eslint-plugin-jest": "^22.7.2",
-    "eslint-plugin-node": "^9.1.0",
-    "eslint-plugin-promise": "^4.2.1",
+    "@babel/core": "^7.15.8",
+    "@babel/eslint-parser": "^7.15.8",
+    "@babel/plugin-syntax-top-level-await": "^7.14.5",
+    "@commitlint/cli": "^13.2.1",
+    "@commitlint/config-conventional": "^13.2.0",
+    "@semantic-release/changelog": "^6.0.0",
+    "@semantic-release/commit-analyzer": "^9.0.1",
+    "@semantic-release/git": "^10.0.0",
+    "@semantic-release/github": "^8.0.1",
+    "@semantic-release/npm": "^8.0.2",
+    "@semantic-release/release-notes-generator": "^10.0.2",
+    "eslint": "^8.0.1",
+    "eslint-plugin-jest": "^25.2.2",
+    "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-security": "^1.4.0",
-    "eslint-plugin-standard": "^4.0.0",
-    "husky": "^3.0.0",
-    "jest": "^24.8.0",
-    "lint-staged": "^9.2.0",
-    "lockfile-lint": "^2.0.1",
-    "open-cli": "^6.0.0",
-    "prettier": "^1.18.2"
+    "eslint-plugin-standard": "^4.1.0",
+    "husky": "^7.0.4",
+    "jest": "^27.3.1",
+    "lint-staged": "^11.2.3",
+    "lockfile-lint": "^4.6.2",
+    "open-cli": "^7.0.1",
+    "prettier": "^2.4.1"
   },
   "jest": {
     "testEnvironment": "node",
@@ -90,18 +97,9 @@
       "**/*.test.js"
     ]
   },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint --env HUSKY_GIT_PARAMS",
-      "pre-commit": "lint-staged",
-      "post-merge": "<%= npmClient %> install",
-      "pre-push": "<%= npmClient %> run lint && <%= npmClient %> run test"
-    }
-  },
   "lint-staged": {
     "**/*.js": [
       "<%= npmClient %> run format",
-      "git add"
     ]
   },
   "commitlint": {
@@ -122,23 +120,24 @@
     "coverage/**"
   ],
   "eslintConfig": {
-    "env": {
-      "node": true,
-      "es6": true,
-      "jest": true
-    },
     "plugins": [
-      "import",
-      "standard",
       "node",
       "security",
       "jest"
     ],
     "extends": [
-      "standard",
       "plugin:node/recommended"
     ],
     "rules": {
+      "node/no-unsupported-features/es-syntax": [
+        "error",
+        {
+          "ignores": [
+            "dynamicImport",
+            "modules"
+          ]
+        }
+      ],
       "no-process-exit": "warn",
       "jest/no-disabled-tests": "error",
       "jest/no-focused-tests": "error",
@@ -159,8 +158,9 @@
       "space-before-function-paren": "off",
       "object-curly-spacing": "off"
     },
+    "parser": "@babel/eslint-parser",
     "parserOptions": {
-      "ecmaVersion": 2020,
+      "sourceType": "module",
       "ecmaFeatures": {
         "impliedStrict": true
       }
