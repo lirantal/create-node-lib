@@ -32,8 +32,6 @@ describe('all the template files are accountable for', () => {
     expect(stream.fileList).toContain('LICENSE')
     expect(stream.fileList).toContain('README.md')
     expect(stream.fileList).toContain('__tests__/app.test.js')
-    expect(stream.fileList).toContain('index.js')
-    expect(stream.fileList).toContain('jsdoc.json')
     expect(stream.fileList).toContain('package.json')
   })
 

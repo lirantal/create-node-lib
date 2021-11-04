@@ -127,10 +127,6 @@
       "**/out/"
     ]
   },
-  "eslintIgnore": [
-    "coverage/**",
-    "template/**"
-  ],
   "eslintConfig": {
     "env": {
       "node": true,

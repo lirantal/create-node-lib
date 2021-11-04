@@ -32,10 +32,6 @@
     "email": "<%= email %>",
     "url": "https://github.com/<%= username %>"
   },
-  "files": [
-    "src",
-    "bin"
-  ],
   "license": "Apache-2.0",
   "keywords": [
     "<%= keywords %>"
@@ -99,7 +95,7 @@
   },
   "lint-staged": {
     "**/*.js": [
-      "<%= npmClient %> run format",
+      "<%= npmClient %> run format"
     ]
   },
   "commitlint": {
