@@ -25,13 +25,13 @@ Scaffold a batteries-included Node.js library project with docs, tests, semantic
 
 Generate a new project for the library by running one of the following executors built into npm and yarn:
 
-```bash
+```sh
 npx create-node-lib my-cool-lib-name
 ```
 
-or if you're using yarn
+or if you're using yarn:
 
-```bash
+```sh
 yarn create node-lib my-cool-lib-name
 ```
 
