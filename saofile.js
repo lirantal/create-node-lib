@@ -92,14 +92,6 @@ module.exports = {
         }
       },
       {
-        type: 'modify',
-        files: 'package.json',
-        handler(data, filepath) {
-          data.files = ['src']
-          return data
-        }
-      },
-      {
         type: 'move',
         patterns: {
           gitignore: '.gitignore'
