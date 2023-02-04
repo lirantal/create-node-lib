@@ -7,10 +7,10 @@ jobs:
   #   name: Lint
   #   runs-on: 'ubuntu-latest'
   #   steps:
-  #     - uses: actions/checkout@v2
-  #     - uses: actions/setup-node@v2
+  #     - uses: actions/checkout@v3
+  #     - uses: actions/setup-node@v3
   #       with:
-  #         node-version: '16'
+  #         node-version: '18'
   #     - name: install dependencies
   #       run: npm ci
   #     - name: lint code
@@ -20,12 +20,12 @@ jobs:
     strategy:
       matrix:
         platform: [ubuntu-latest]
-        node: ['14', '16']
+        node: ['14', '16', '18']
     name: Tests - Node ${{ matrix.node }} (${{ matrix.platform }})
     runs-on: ${{ matrix.platform }}
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node }}
       - name: install dependencies
@@ -43,10 +43,10 @@ jobs:
     needs: build
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
-          node-version: '16'
+          node-version: '18'
       - name: install dependencies
         run: npm ci --ignore-engines --only=production
       - name: release
