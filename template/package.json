@@ -97,6 +97,16 @@
       "<%= npmClient %> run format"
     ]
   },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint --env HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged",
+      "pre-push": "<%= npmClient %> run lint && <%= npmClient %> run test",
+      "post-commit": "git status",
+      "post-checkout": "git status",
+      "post-merge": "<%= npmClient %> install"
+    }
+  },
   "commitlint": {
     "extends": [
       "@commitlint/config-conventional"
