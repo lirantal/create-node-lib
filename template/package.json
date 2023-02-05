@@ -93,7 +93,7 @@
     ]
   },
   "lint-staged": {
-    "**/*.js": [
+    "**/*.{js,json}": [
       "<%= npmClient %> run format"
     ]
   },
