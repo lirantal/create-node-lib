@@ -214,5 +214,8 @@
       }
     ],
     "@semantic-release/github"
-  ]
+  ],
+  "peerDependencies": {
+    "node-notifier": "^10.0.1"
+  }
 }
