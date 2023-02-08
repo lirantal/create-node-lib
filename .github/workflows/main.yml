@@ -12,7 +12,7 @@ jobs:
   #       with:
   #         node-version: '18'
   #     - name: install dependencies
-  #       run: npm ci
+  #       run: npm ci --audit false
   #     - name: lint code
   #       run: npm run lint
 
@@ -29,7 +29,7 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
       - name: install dependencies
-        run: npm ci --ignore-engines
+        run: npm ci --ignore-engines --audit false
       - name: run tests
         run: npm run test
       - name: code coverage report
@@ -48,7 +48,7 @@ jobs:
         with:
           node-version: '18'
       - name: install dependencies
-        run: npm ci --ignore-engines --only=production
+        run: npm ci --ignore-engines --only=production --audit false
       - name: release
         run: npx semantic-release
         env:
