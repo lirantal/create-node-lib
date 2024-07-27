@@ -1,4 +1,4 @@
-<% const npmClientInstall = context.npmClient === 'npm' ? 'install --save' : 'add' -%>
+<!-- markdownlint-disable -->
 
 <p align="center"><h1 align="center">
   <%= projectName %>
@@ -18,31 +18,22 @@
   <a href="./SECURITY.md"><img src="https://img.shields.io/badge/Security-Responsible%20Disclosure-yellow.svg" alt="Responsible Disclosure Policy" /></a>
 </p>
 
-# About
-
-<%= description %>
-
-# Install
+## Install
 
 ```bash
 <%= npmClient %> <%= npmClientInstall %> <%= projectName %>
 ```
+## Usage: CLI
 
-# Usage
-
-```js
+```bash
 // @TODO
 const {} = require('<%= projectName %>')
 ```
 
-# Example
-
-<!-- TODO -->
-
-# Contributing
+## Contributing
 
 Please consult [CONTRIBUTING](./CONTRIBUTING.md) for guidelines on contributing to this project.
 
-# Author
+## Author
 
 **<%= projectName %>** © [<%= author %>](https://github.com/<%= username %>), Released under the [Apache-2.0](./LICENSE) License.
