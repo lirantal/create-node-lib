@@ -80,5 +80,8 @@ typings/
 # DynamoDB Local files
 .dynamodb/
 
+# Visual Studio Code
+.vscode/
+
 # Snyk
 .dccache

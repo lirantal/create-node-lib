@@ -30,12 +30,12 @@ module.exports = {
       {
         name: 'description',
         message: 'How would you describe the new project',
-        default: ``
+        default: ''
       },
       {
         name: 'keywords',
         message: 'Comma-separated list of package keywords for npm',
-        default: ``
+        default: ''
       },
       {
         name: 'author',
@@ -90,14 +90,15 @@ module.exports = {
           ] = `lockfile-lint --path ${lockfile} --validate-https --allowed-hosts npm yarn`
           return data
         }
-      },
-      {
-        type: 'move',
-        patterns: {
-          gitignore: '.gitignore'
-          // '_package.json': 'package.json'
-        }
       }
+      // we already have the .gitignore file as part of the template/ directory
+      // {
+      //   type: 'move',
+      //   patterns: {
+      //     gitignore: '.gitignore'
+      //     // '_package.json': 'package.json'
+      //   }
+      // }
     ]
   },
   async completed() {
@@ -105,6 +106,6 @@ module.exports = {
     await this.npmInstall({ npmClient: this.answers.npmClient })
     this.showProjectTips()
 
-    this.logger.tip(`You're all setup. hack away!`)
+    this.logger.tip('You\'re all setup. hack away!')
   }
 }
