@@ -1,0 +1,18 @@
+{
+	"configurations": [
+		{
+            "name": "Launch Program",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/main.ts",
+            "console": "integratedTerminal",
+            "restart": true,
+            "args": [],
+            "runtimeExecutable": null,
+            "runtimeArgs": [
+                "--nolazy"
+            ]
+        }
+	],
+	"version": "0.2.0"
+}

@@ -1,0 +1,23 @@
+{
+    "eslint.format.enable": true,
+    "[javascript]": {
+      "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    },
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    "editor.formatOnSave": true,
+  
+    // adopted from create-typescript-app template for vscode settings:
+    "editor.codeActionsOnSave": { "source.fixAll.eslint": "explicit" },
+      "editor.rulers": [120],
+      "eslint.probe": [
+          "javascript",
+          "javascriptreact",
+          "json",
+          "jsonc",
+          "markdown",
+          "typescript",
+          "typescriptreact",
+          "yaml"
+      ],
+      "typescript.tsdk": "node_modules/typescript/lib"
+  }
