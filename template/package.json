@@ -8,14 +8,19 @@
   "exports": {
     ".": {
       "import": {
-        "default": "./dist/main.mjs",
-        "types": "./dist/main.d.ts"
+        "types": "./dist/main.d.ts",
+        "default": "./dist/main.mjs"
       },
       "require": {
-        "default": "./dist/main.cjs",
-        "types": "./dist/main.d.cts"
+        "types": "./dist/main.d.cts",
+        "default": "./dist/main.cjs"
       },
       "default": "./dist/main.mjs"
+    },
+    "./dist/*": {
+      "types": "./dist/*.d.ts",
+      "import": "./dist/*.mjs",
+      "require": "./dist/*.cjs"
     }
   },
   "engines": {
