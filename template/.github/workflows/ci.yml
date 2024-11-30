@@ -19,6 +19,8 @@ jobs:
         run: npm ci
       - name: lint code
         run: npm run lint
+      - name: build project
+        run: npm run build
       - name: run tests
         run: npm run test
       - name: coverage
@@ -41,5 +43,7 @@ jobs:
           node-version: "22.0.0"
       - name: install dependencies
         run: npm ci
+      - name: build project
+        run: npm run build
       - name: release preview with pkr-pr-new
         run: npx pkg-pr-new publish
