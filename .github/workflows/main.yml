@@ -32,10 +32,10 @@ jobs:
         run: npm ci --ignore-engines --audit false
       - name: run tests
         run: npm run test
-      - name: code coverage report
-        run: npx codecov
-        env:
-          CODECOV_TOKEN: ${{secrets.CODECOV_TOKEN}}
+      # - name: code coverage report
+      #   run: npx codecov
+      #   env:
+      #     CODECOV_TOKEN: ${{secrets.CODECOV_TOKEN}}
 
   release:
     name: do semantic release
