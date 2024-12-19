@@ -6,7 +6,10 @@ const SUPPORTED_NPM_CLIENTS = ['npm', 'yarn']
 module.exports = {
   description: 'Scaffolding out a node library.',
   templateData: {
-    year: new Date().getFullYear()
+    year: new Date().getFullYear(),
+    npmClientInstall: ({ npmClient }) => {
+      return npmClient === 'npm' ? 'install' : 'add'
+    }
   },
   prompts() {
     return [
