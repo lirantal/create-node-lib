@@ -20,8 +20,8 @@
 
 ## Install
 
-```bash
-<%= npmClient %> <%= npmClientInstall %> <%= projectName %>
+```sh
+<%= npmClient %> <%= npmClientInstall(npmClient) %> <%= projectName %>
 ```
 ## Usage: CLI
 
