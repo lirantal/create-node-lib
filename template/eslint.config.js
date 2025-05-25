@@ -7,9 +7,9 @@ export default [
   pluginSecurity.configs.recommended,
   {
     rules: {
-      'no-process-exit': 'warn',
-      'node/no-unsupported-features': 'off',
-      'node/no-unpublished-require': 'off',
+      'n/no-process-exit': 'warn',
+      'n/no-unsupported-features': 'off',
+      'n/no-unpublished-require': 'off',
       'security/detect-non-literal-fs-filename': 'error',
       'security/detect-unsafe-regex': 'error',
       'security/detect-buffer-noassert': 'error',
