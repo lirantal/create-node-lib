@@ -37,8 +37,8 @@
     "lint": "eslint . && npm run lint:lockfile",
     "lint:fix": "eslint . --fix",
     "lint:lockfile": "lockfile-lint --path package-lock.json --validate-https --allowed-hosts npm yarn",
-    "test": "c8 node --loader ts-node/esm --test __tests__/**",
-    "test:watch": "c8 node --loader ts-node/esm --test --watch __tests__/**",
+    "test": "c8 node --loader ts-node/esm --test __tests__/**/*.test.ts",
+    "test:watch": "c8 node --loader ts-node/esm --test --watch __tests__/**/*.test.ts",
     "coverage:view": "open coverage/lcov-report/index.html",
     "version": "changeset version",
     "release": "changeset publish"
