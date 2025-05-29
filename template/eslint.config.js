@@ -2,7 +2,11 @@ import pluginSecurity from 'eslint-plugin-security'
 import neostandard, { resolveIgnoresFromGitignore, plugins } from 'neostandard'
 
 export default [
-  ...neostandard({ ignores: resolveIgnoresFromGitignore() }),
+  ...neostandard({
+    ignores: resolveIgnoresFromGitignore(),
+    ts: true,   // Enable TypeScript support,
+    filesTs: ['src/**/*.ts', '__tests__/**/*.ts']
+  }),
   plugins.n.configs['flat/recommended-script'],
   pluginSecurity.configs.recommended,
   {
