@@ -33,12 +33,13 @@
     "bin"
   ],
   "scripts": {
+    "start": "node --import tsx src/bin/cli.ts",
     "build": "tsc && tsup",
     "lint": "eslint . && npm run lint:lockfile",
     "lint:fix": "eslint . --fix",
     "lint:lockfile": "lockfile-lint --path package-lock.json --validate-https --allowed-hosts npm yarn",
-    "test": "c8 node --loader ts-node/esm --test __tests__/**/*.test.ts",
-    "test:watch": "c8 node --loader ts-node/esm --test --watch __tests__/**/*.test.ts",
+    "test": "c8 node --import tsx --test __tests__/**/*.test.ts",
+    "test:watch": "c8 node --import tsx --test --watch __tests__/**/*.test.ts",
     "coverage:view": "open coverage/lcov-report/index.html",
     "version": "changeset version",
     "release": "changeset publish"
@@ -77,6 +78,7 @@
     "neostandard": "^0.11.0",
     "ts-node": "^10.9.2",
     "tsup": "^8.1.0",
+    "tsx": "^4.19.4",
     "typescript": "^5.5.3",
     "validate-conventional-commit": "^1.0.4"
   },
