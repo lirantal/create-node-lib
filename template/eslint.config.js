@@ -27,6 +27,7 @@ export default [
       'security/detect-pseudoRandomBytes': 'error',
       'space-before-function-paren': 'off',
       'object-curly-spacing': 'off',
+      'n/hashbang': 'off'
     },
     languageOptions: {
       ecmaVersion: 2024,
