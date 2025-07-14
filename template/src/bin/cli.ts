@@ -5,7 +5,7 @@ import { add } from '../main.ts'
 const debug = debuglog('<%= projectName %>')
 
 async function init () {
-    const sum = await add(1,2)
+    const sum = await add(1, 2)
     debug(sum.toString())
 }
 
