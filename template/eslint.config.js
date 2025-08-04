@@ -2,14 +2,18 @@ import pluginSecurity from 'eslint-plugin-security'
 import neostandard, { resolveIgnoresFromGitignore, plugins } from 'neostandard'
 
 export default [
-  ...neostandard({ ignores: resolveIgnoresFromGitignore() }),
+  ...neostandard({
+    ignores: resolveIgnoresFromGitignore(),
+    ts: true,   // Enable TypeScript support,
+    filesTs: ['src/**/*.ts', '__tests__/**/*.ts']
+  }),
   plugins.n.configs['flat/recommended-script'],
   pluginSecurity.configs.recommended,
   {
     rules: {
-      'no-process-exit': 'warn',
-      'node/no-unsupported-features': 'off',
-      'node/no-unpublished-require': 'off',
+      'n/no-process-exit': 'warn',
+      'n/no-unsupported-features': 'off',
+      'n/no-unpublished-require': 'off',
       'security/detect-non-literal-fs-filename': 'error',
       'security/detect-unsafe-regex': 'error',
       'security/detect-buffer-noassert': 'error',
@@ -23,6 +27,7 @@ export default [
       'security/detect-pseudoRandomBytes': 'error',
       'space-before-function-paren': 'off',
       'object-curly-spacing': 'off',
+      'n/hashbang': 'off'
     },
     languageOptions: {
       ecmaVersion: 2024,
