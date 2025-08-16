@@ -24,6 +24,8 @@
     "removeComments": true,
     "moduleDetection": "force",
     "verbatimModuleSyntax": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
   },
   "include": [
     "src/**/*",
