@@ -35,7 +35,8 @@
   "scripts": {
     "start": "node --import tsx src/bin/cli.ts",
     "build": "tsc && tsup",
-    "lint": "eslint . && npm run lint:lockfile",
+    "lint": "eslint . && npm run lint:lockfile && npm run lint:markdown",
+    "lint:markdown": "npx -y markdownlint-cli@0.45.0 -c .github/.markdownlint.yml -i '.git' -i '__tests__' -i '.github' -i '.changeset' -i 'CODE_OF_CONDUCT.md' -i 'CHANGELOG.md' -i 'docs/**' -i 'node_modules' -i 'dist' '**/**.md' --fix",
     "lint:fix": "eslint . --fix",
     "lint:lockfile": "lockfile-lint --path package-lock.json --validate-https --allowed-hosts npm yarn",
     "test": "c8 node --import tsx --test __tests__/**/*.test.ts",
