@@ -107,6 +107,7 @@ module.exports = {
   async completed() {
     this.gitInit()
     await this.npmInstall({ npmClient: this.answers.npmClient })
+    await this.npmInstall({ npmClient: this.answers.npmClient, args: ['run', 'prepare'] })
     this.showProjectTips()
 
     this.logger.tip('You\'re all setup. hack away!')
