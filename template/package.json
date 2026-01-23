@@ -42,6 +42,7 @@
     "test": "c8 node --import tsx --test __tests__/**/*.test.ts",
     "test:watch": "c8 node --import tsx --test --watch __tests__/**/*.test.ts",
     "coverage:view": "open coverage/lcov-report/index.html",
+    "prepare": "husky",
     "version": "changeset version",
     "release": "changeset publish"
   },
