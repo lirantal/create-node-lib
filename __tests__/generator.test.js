@@ -88,4 +88,10 @@ describe('all the template files are accountable for', () => {
     // Testing only variable scripts
     expect(pkg.scripts['lint:lockfile']).toEqual(mockScripts['lint:lockfile'])
   })
+
+  test('Generator creates package.json with prepare script for husky', async () => {
+    const stream = await sao.mock({ generator: template })
+    const pkg = JSON.parse(await stream.readFile('package.json'))
+    expect(pkg.scripts.prepare).toBe('husky')
+  })
 })
