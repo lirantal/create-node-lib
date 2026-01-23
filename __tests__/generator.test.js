@@ -130,4 +130,30 @@ describe('all the template files are accountable for', () => {
     const changesetConfig = JSON.parse(await stream.readFile('.changeset/config.json'))
     expect(changesetConfig.changelog[1].repo).toBe('bob/project')
   })
+
+  test('Generator handles URL with trailing slash', async () => {
+    const mockProjectRepository = 'https://github.com/user/repo/'
+
+    const stream = await sao.mock(
+      { generator: template },
+      {
+        projectRepository: mockProjectRepository
+      }
+    )
+
+    const changesetConfig = JSON.parse(await stream.readFile('.changeset/config.json'))
+    expect(changesetConfig.changelog[1].repo).toBe('user/repo')
+  })
+
+  test('Generator handles empty projectRepository gracefully', async () => {
+    const stream = await sao.mock(
+      { generator: template },
+      {
+        projectRepository: ''
+      }
+    )
+
+    const changesetConfig = JSON.parse(await stream.readFile('.changeset/config.json'))
+    expect(changesetConfig.changelog[1].repo).toBe('')
+  })
 })
