@@ -94,4 +94,40 @@ describe('all the template files are accountable for', () => {
     const pkg = JSON.parse(await stream.readFile('package.json'))
     expect(pkg.scripts.prepare).toBe('husky')
   })
+
+  test('Generator creates changeset config.json file', async () => {
+    const stream = await sao.mock({ generator: template })
+    expect(stream.fileList).toContain('.changeset/config.json')
+  })
+
+  test('Generator creates changeset config with correct repo from projectRepository', async () => {
+    const mockProjectRepository = 'https://github.com/alice/wonderland'
+
+    const stream = await sao.mock(
+      { generator: template },
+      {
+        projectRepository: mockProjectRepository
+      }
+    )
+
+    const changesetConfig = JSON.parse(await stream.readFile('.changeset/config.json'))
+    expect(changesetConfig.changelog[1].repo).toBe('alice/wonderland')
+    expect(changesetConfig.$schema).toBe('https://unpkg.com/@changesets/config/schema.json')
+    expect(changesetConfig.access).toBe('public')
+    expect(changesetConfig.baseBranch).toBe('main')
+  })
+
+  test('Generator creates changeset config with repo extracted from .git URL', async () => {
+    const mockProjectRepository = 'https://github.com/bob/project.git'
+
+    const stream = await sao.mock(
+      { generator: template },
+      {
+        projectRepository: mockProjectRepository
+      }
+    )
+
+    const changesetConfig = JSON.parse(await stream.readFile('.changeset/config.json'))
+    expect(changesetConfig.changelog[1].repo).toBe('bob/project')
+  })
 })
