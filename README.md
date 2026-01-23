@@ -10,7 +10,6 @@
   <a href="https://www.npmjs.org/package/create-node-lib"><img src="https://badgen.net/npm/v/create-node-lib"alt="npm version"/></a>
   <a href="https://www.npmjs.org/package/create-node-lib"><img src="https://badgen.net/npm/license/create-node-lib"alt="license"/></a>
   <a href="https://www.npmjs.org/package/create-node-lib"><img src="https://badgen.net/npm/dt/create-node-lib"alt="downloads"/></a>
-  <a href="https://travis-ci.org/lirantal/create-node-lib"><img src="https://badgen.net/travis/lirantal/create-node-lib" alt="build"/></a>
   <a href="https://snyk.io/test/github/lirantal/create-node-lib"><img src="https://snyk.io/test/github/lirantal/create-node-lib/badge.svg" alt="Known Vulnerabilities"/></a>
   <a href="./SECURITY.md"><img src="https://img.shields.io/badge/Security-Responsible%20Disclosure-yellow.svg" alt="Responsible Disclosure Policy" /></a>
   <a href="https://github.com/saojs/awesome-sao"><img src="https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg" alt="Awesome"/></a>
@@ -35,7 +34,8 @@ or if you're using yarn
 yarn create node-lib my-cool-lib-name
 ```
 
-<img width="675" src="https://user-images.githubusercontent.com/316371/51207479-91a39280-1913-11e9-9527-1b77bf0abb54.png">
+<img alt="Israel Rail API and CLI using npx and npm" src="https://github.com/user-attachments/assets/48ce8c3b-e56f-44a5-9d87-911c34eae43b" />
+
 
 # Contributing
 
