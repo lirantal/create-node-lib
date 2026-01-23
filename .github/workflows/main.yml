@@ -54,7 +54,7 @@ jobs:
           node-version: '18'
           registry-url: 'https://registry.npmjs.org'
       - name: install dependencies
-        run: npm ci --ignore-engines --only=production --audit false
+        run: npm ci --ignore-engines --audit false
       - name: release
         run: npx semantic-release
         env:
