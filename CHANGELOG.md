@@ -1,3 +1,10 @@
+## [2.9.4](https://github.com/lirantal/create-node-lib/compare/v2.9.3...v2.9.4) (2026-01-23)
+
+
+### Bug Fixes
+
+* add default changeset configuration to scaffolded projects ([#41](https://github.com/lirantal/create-node-lib/issues/41)) ([2cc16c6](https://github.com/lirantal/create-node-lib/commit/2cc16c6d05dc4921ac7247639771b2b1bf3c63e4))
+
 ## [2.9.3](https://github.com/lirantal/create-node-lib/compare/v2.9.2...v2.9.3) (2026-01-23)
 
 
