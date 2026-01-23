@@ -41,6 +41,11 @@
     "type": "git",
     "url": "https://github.com/lirantal/create-node-lib.git"
   },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "tag": "latest",
+    "provenance": true
+  }
   "dependencies": {
     "sao": "^1.7.1",
     "validate-npm-package-name": "^5.0.0"
