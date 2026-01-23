@@ -1,0 +1,13 @@
+## [2.9.3](https://github.com/lirantal/create-node-lib/compare/v2.9.2...v2.9.3) (2026-01-23)
+
+
+### Bug Fixes
+
+* add prepare script to template for Husky initialization ([#33](https://github.com/lirantal/create-node-lib/issues/33)) ([4ff841d](https://github.com/lirantal/create-node-lib/commit/4ff841d79f03f18e1e2f13222fcbc8d38cd9069e))
+* add publishConfig to package.json ([13fd5cf](https://github.com/lirantal/create-node-lib/commit/13fd5cf8cf7d02465bd4c1a48e1143ae39ce6047))
+* fix automated release failures from main branch ([#35](https://github.com/lirantal/create-node-lib/issues/35)) ([4450205](https://github.com/lirantal/create-node-lib/commit/44502052361a33db2e3283a827bf93638f21d55b))
+* Fix JSON formatting in package.json ([2532548](https://github.com/lirantal/create-node-lib/commit/25325482c68b7f3f85c18255bff9bdffb97f8050))
+* nest semantic-release plugins in release config for OIDC provenance ([#37](https://github.com/lirantal/create-node-lib/issues/37)) ([afbcecd](https://github.com/lirantal/create-node-lib/commit/afbcecd664c6da84f74aee97e5f568c066742ba4))
+* npm publishing ([00bd030](https://github.com/lirantal/create-node-lib/commit/00bd030794206a8726e5d5996e120beade63a6d0))
+* out of sync package lock ([a5400dc](https://github.com/lirantal/create-node-lib/commit/a5400dca74f2a320942007158214ed076a066d88))
+* update deep deps ([49fdbae](https://github.com/lirantal/create-node-lib/commit/49fdbaee2bd540ee0d8d8bc17155edae2c721da8))
