@@ -1,3 +1,10 @@
+## [2.9.7](https://github.com/lirantal/create-node-lib/compare/v2.9.6...v2.9.7) (2026-02-22)
+
+
+### Bug Fixes
+
+* Upgrade Node setup and Codecov action versions ([78af575](https://github.com/lirantal/create-node-lib/commit/78af57536edbbffbd3e644bbe79079e127a34789))
+
 ## [2.9.6](https://github.com/lirantal/create-node-lib/compare/v2.9.5...v2.9.6) (2026-02-22)
 
 
