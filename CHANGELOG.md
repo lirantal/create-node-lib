@@ -1,3 +1,10 @@
+## [2.9.5](https://github.com/lirantal/create-node-lib/compare/v2.9.4...v2.9.5) (2026-02-22)
+
+
+### Bug Fixes
+
+* Update npm package links in README.md ([14f4323](https://github.com/lirantal/create-node-lib/commit/14f43238782702f00597a5bac7bdcc9ba33da343))
+
 ## [2.9.4](https://github.com/lirantal/create-node-lib/compare/v2.9.3...v2.9.4) (2026-01-23)
 
 
