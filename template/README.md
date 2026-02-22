@@ -13,7 +13,7 @@
   <a href="https://www.npmjs.com/package/<%= projectName %>"><img src="https://badgen.net/npm/license/<%= projectName %>" alt="license"/></a>
   <a href="https://www.npmjs.com/package/<%= projectName %>"><img src="https://badgen.net/npm/dt/<%= projectName %>" alt="downloads"/></a>
   <a href="https://github.com/<%= username %>/<%= projectName %>/actions?workflow=CI"><img src="https://github.com/<%= username %>/<%= projectName %>/workflows/CI/badge.svg" alt="build"/></a>
-  <a href="https://codecov.io/gh/<%= username %>/<%= projectName %>"><img src="https://badgen.net/codecov/c/github/<%= username %>/<%= projectName %>" alt="codecov"/></a>
+  <a href="https://app.codecov.io/gh/<%= username %>/<%= projectName %>"><img src="https://badgen.net/codecov/c/github/<%= username %>/<%= projectName %>" alt="codecov"/></a>
   <a href="https://snyk.io/test/github/<%= username %>/<%= projectName %>"><img src="https://snyk.io/test/github/<%= username %>/<%= projectName %>/badge.svg" alt="Known Vulnerabilities"/></a>
   <a href="./SECURITY.md"><img src="https://img.shields.io/badge/Security-Responsible%20Disclosure-yellow.svg" alt="Responsible Disclosure Policy" /></a>
 </p>
