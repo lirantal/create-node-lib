@@ -1,3 +1,11 @@
+## [2.9.6](https://github.com/lirantal/create-node-lib/compare/v2.9.5...v2.9.6) (2026-02-22)
+
+
+### Bug Fixes
+
+* Update Node.js setup action to version 6 ([12eabeb](https://github.com/lirantal/create-node-lib/commit/12eabeb3c0684e312bc917c744f50c61ad5c1014))
+* Update Node.js version in release workflow ([c218f58](https://github.com/lirantal/create-node-lib/commit/c218f587593156895decee9016eb111da5aa417b))
+
 ## [2.9.5](https://github.com/lirantal/create-node-lib/compare/v2.9.4...v2.9.5) (2026-02-22)
 
 
