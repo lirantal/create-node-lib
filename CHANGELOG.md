@@ -1,3 +1,10 @@
+## [2.9.9](https://github.com/lirantal/create-node-lib/compare/v2.9.8...v2.9.9) (2026-02-22)
+
+
+### Bug Fixes
+
+* Update link for Contributor Covenant in CODE_OF_CONDUCT ([f4b28f4](https://github.com/lirantal/create-node-lib/commit/f4b28f44f08c6519ad2b2315b43c899e0394e975))
+
 ## [2.9.8](https://github.com/lirantal/create-node-lib/compare/v2.9.7...v2.9.8) (2026-02-22)
 
 
