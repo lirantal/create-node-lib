@@ -1,3 +1,11 @@
+## [2.9.10](https://github.com/lirantal/create-node-lib/compare/v2.9.9...v2.9.10) (2026-02-22)
+
+
+### Bug Fixes
+
+* Fix link formatting in SECURITY.md ([46290e2](https://github.com/lirantal/create-node-lib/commit/46290e2d8bd510f207e226c25b1b0786bb5c15f6))
+* Update Codecov link in README.md ([fce1607](https://github.com/lirantal/create-node-lib/commit/fce160792adf9aab4903177d26023ac6bd0762a6))
+
 ## [2.9.9](https://github.com/lirantal/create-node-lib/compare/v2.9.8...v2.9.9) (2026-02-22)
 
 
