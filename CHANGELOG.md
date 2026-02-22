@@ -1,3 +1,10 @@
+## [2.9.8](https://github.com/lirantal/create-node-lib/compare/v2.9.7...v2.9.8) (2026-02-22)
+
+
+### Bug Fixes
+
+* update release workflow ([ed70308](https://github.com/lirantal/create-node-lib/commit/ed7030886a81b32274f4ce5bf23d2005e0c2b3bf))
+
 ## [2.9.7](https://github.com/lirantal/create-node-lib/compare/v2.9.6...v2.9.7) (2026-02-22)
 
 
