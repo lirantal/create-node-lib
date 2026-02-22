@@ -1,3 +1,10 @@
+## [2.9.11](https://github.com/lirantal/create-node-lib/compare/v2.9.10...v2.9.11) (2026-02-22)
+
+
+### Bug Fixes
+
+* Refactor bin entry in package.json to use object syntax ([1146c88](https://github.com/lirantal/create-node-lib/commit/1146c881a1aead596b5daf4be91b908161dc74ad))
+
 ## [2.9.10](https://github.com/lirantal/create-node-lib/compare/v2.9.9...v2.9.10) (2026-02-22)
 
 
