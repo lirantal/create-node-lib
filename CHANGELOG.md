@@ -1,3 +1,10 @@
+## [2.9.12](https://github.com/lirantal/create-node-lib/compare/v2.9.11...v2.9.12) (2026-03-03)
+
+
+### Bug Fixes
+
+* add .lychee.toml configuration file ([3aebc10](https://github.com/lirantal/create-node-lib/commit/3aebc10f33c94a4a527ebd3248dc2455ea1c8bb8))
+
 ## [2.9.11](https://github.com/lirantal/create-node-lib/compare/v2.9.10...v2.9.11) (2026-02-22)
 
 
