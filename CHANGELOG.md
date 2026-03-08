@@ -1,3 +1,10 @@
+## [2.9.13](https://github.com/lirantal/create-node-lib/compare/v2.9.12...v2.9.13) (2026-03-08)
+
+
+### Bug Fixes
+
+* links checker updates ([e50e0eb](https://github.com/lirantal/create-node-lib/commit/e50e0eb3c0509ee9508ceb7fb8ccb5041929f9c5))
+
 ## [2.9.12](https://github.com/lirantal/create-node-lib/compare/v2.9.11...v2.9.12) (2026-03-03)
 
 
