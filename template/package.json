@@ -4,7 +4,9 @@
   "description": "<%= description %>",
   "types": "dist/main.d.ts",
   "type": "module",
-  "bin": "./dist/bin/cli.cjs",
+  "bin": {
+    "<%= projectName %>": "./dist/bin/cli.cjs"
+  },
   "exports": {
     ".": {
       "import": {
@@ -49,7 +51,7 @@
   "author": {
     "name": "<%= author %>",
     "email": "<%= email %>",
-    "url": "https://github.com/<%= username %>"
+    "url": "git+https://github.com/<%= username %>"
   },
   "publishConfig": {
     "provenance": true,

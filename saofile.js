@@ -9,6 +9,13 @@ module.exports = {
     year: new Date().getFullYear(),
     npmClientInstall: ({ npmClient }) => {
       return npmClient === 'npm' ? 'install' : 'add'
+    },
+    changesetRepo: ({ projectRepository }) => {
+      // Extract owner/repo from URL like https://github.com/username/reponame
+      // or https://github.com/username/reponame.git
+      if (!projectRepository || typeof projectRepository !== 'string') return ''
+      const match = projectRepository.match(/github\.com\/([^/]+\/[^/.?#]+)/)
+      return match ? match[1] : ''
     }
   },
   prompts() {
