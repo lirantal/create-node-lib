@@ -1,3 +1,10 @@
+## [2.10.1](https://github.com/lirantal/create-node-lib/compare/v2.10.0...v2.10.1) (2026-03-09)
+
+
+### Bug Fixes
+
+* rename template .gitignore to gitignore so it survives npm packaging ([0a61159](https://github.com/lirantal/create-node-lib/commit/0a611591ec331963f86072360deac97ccf9ece7d))
+
 # [2.10.0](https://github.com/lirantal/create-node-lib/compare/v2.9.14...v2.10.0) (2026-03-09)
 
 
