@@ -1,3 +1,11 @@
+# [2.11.0](https://github.com/lirantal/create-node-lib/compare/v2.10.1...v2.11.0) (2026-03-09)
+
+
+### Features
+
+* auto set the remote properly post scaffold ([6c92b6a](https://github.com/lirantal/create-node-lib/commit/6c92b6ae8d4f47a7b1f4de5e26dd62fb82ad5abc))
+* change to main branch post scaffold ([4e7c55d](https://github.com/lirantal/create-node-lib/commit/4e7c55d95db8a1dc34108b54314242a2cf0d0c57))
+
 ## [2.10.1](https://github.com/lirantal/create-node-lib/compare/v2.10.0...v2.10.1) (2026-03-09)
 
 
