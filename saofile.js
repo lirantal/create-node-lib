@@ -100,15 +100,13 @@ module.exports = {
           ] = `lockfile-lint --path ${lockfile} --validate-https --allowed-hosts npm`
           return data
         }
+      },
+      {
+        type: 'move',
+        patterns: {
+          gitignore: '.gitignore'
+        }
       }
-      // we already have the .gitignore file as part of the template/ directory
-      // {
-      //   type: 'move',
-      //   patterns: {
-      //     gitignore: '.gitignore'
-      //     // '_package.json': 'package.json'
-      //   }
-      // }
     ]
   },
   async completed() {
