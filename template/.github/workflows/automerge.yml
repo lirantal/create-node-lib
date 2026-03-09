@@ -16,10 +16,12 @@ on:
   check_suite:
     types:
       - completed
-  status: {}
 jobs:
   automerge:
     runs-on: ubuntu-latest
+    if: >
+      github.event_name != 'check_suite' ||
+      github.event.check_suite.pull_requests[0] != null
     permissions:
       contents: write
       pull-requests: write
@@ -30,7 +32,7 @@ jobs:
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
           # we only merge PRs with labels of "dependencies" 
-          MERGE_LABELS: "automerge"
+          MERGE_LABELS: "automerge,dependencies"
           MERGE_REMOVE_LABELS: "automerge"
           MERGE_METHOD: "squash"
           MERGE_COMMIT_MESSAGE: "automatic"
