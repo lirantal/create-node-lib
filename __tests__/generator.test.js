@@ -45,7 +45,7 @@ describe('all the template files are accountable for', () => {
     const mockProjectRepository = 'https://www.github.com/alice/inchains.git'
     const mockScripts = {
       'lint:lockfile':
-        'lockfile-lint --path package-lock.json --validate-https --allowed-hosts npm yarn'
+        'lockfile-lint --path pnpm-lock.yaml --validate-https --allowed-hosts npm'
     }
 
     const stream = await sao.mock(
@@ -72,15 +72,15 @@ describe('all the template files are accountable for', () => {
     expect(pkg.scripts['lint:lockfile']).toEqual(mockScripts['lint:lockfile'])
   })
 
-  test('Generator input creates correct package.json scripts with yarn as client', async () => {
+  test('Generator input creates correct package.json scripts with npm as client', async () => {
     const mockScripts = {
-      'lint:lockfile': 'lockfile-lint --path yarn.lock --validate-https --allowed-hosts npm yarn'
+      'lint:lockfile': 'lockfile-lint --path package-lock.json --validate-https --allowed-hosts npm'
     }
 
     const stream = await sao.mock(
       { generator: template },
       {
-        npmClient: 'yarn'
+        npmClient: 'npm'
       }
     )
 

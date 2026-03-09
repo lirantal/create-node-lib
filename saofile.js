@@ -1,14 +1,14 @@
 'use strict'
 const validateNpmPackageName = require('validate-npm-package-name')
 
-const SUPPORTED_NPM_CLIENTS = ['npm', 'yarn']
+const SUPPORTED_NPM_CLIENTS = ['pnpm', 'npm']
 
 module.exports = {
   description: 'Scaffolding out a node library.',
   templateData: {
     year: new Date().getFullYear(),
     npmClientInstall: ({ npmClient }) => {
-      return npmClient === 'npm' ? 'install' : 'add'
+      return npmClient === 'pnpm' ? 'add' : 'install'
     },
     changesetRepo: ({ projectRepository }) => {
       // Extract owner/repo from URL like https://github.com/username/reponame
@@ -23,7 +23,7 @@ module.exports = {
       {
         name: 'npmClient',
         message: 'Which package manager do you want to use?',
-        default: 'npm',
+        default: 'pnpm',
         type: 'list',
         choices: SUPPORTED_NPM_CLIENTS
       },
@@ -84,7 +84,7 @@ module.exports = {
     ]
   },
   actions() {
-    const lockfile = this.answers.npmClient === 'npm' ? 'package-lock.json' : 'yarn.lock'
+    const lockfile = this.answers.npmClient === 'pnpm' ? 'pnpm-lock.yaml' : 'package-lock.json'
     return [
       {
         type: 'add',
@@ -97,7 +97,7 @@ module.exports = {
         handler(data, filepath) {
           data.scripts[
             'lint:lockfile'
-          ] = `lockfile-lint --path ${lockfile} --validate-https --allowed-hosts npm yarn`
+          ] = `lockfile-lint --path ${lockfile} --validate-https --allowed-hosts npm`
           return data
         }
       }

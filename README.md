@@ -22,16 +22,16 @@ Scaffold a batteries-included Node.js library project with docs, tests, semantic
 
 # Install
 
-Generate a new project for the library by running one of the following executors built into npm and yarn:
+Generate a new project for the library by running one of the following:
 
 ```bash
 npx create-node-lib my-cool-lib-name
 ```
 
-or if you're using yarn
+or if you're using pnpm
 
 ```bash
-yarn create node-lib my-cool-lib-name
+pnpm create node-lib my-cool-lib-name
 ```
 
 <img alt="Israel Rail API and CLI using npx and npm" src="https://github.com/user-attachments/assets/48ce8c3b-e56f-44a5-9d87-911c34eae43b" />

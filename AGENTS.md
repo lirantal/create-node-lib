@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-**create-node-lib** is a scaffolding CLI tool that generates batteries-included Node.js library projects. Users run `npx create-node-lib my-lib-name`, answer interactive prompts, and get a fully configured project with TypeScript, testing, linting, CI/CD, changesets, and git hooks.
+**create-node-lib** is a scaffolding CLI tool that generates batteries-included Node.js library projects. Users run `npx create-node-lib my-lib-name` (or `pnpm create node-lib my-lib-name`), answer interactive prompts, and get a fully configured project with TypeScript, testing, linting, CI/CD, changesets, and git hooks.
 
 ## Architecture
 
@@ -103,3 +103,4 @@ The generator's CI (`.github/workflows/main.yml`) runs on push and PR:
 5. **No TypeScript at root**: The generator itself is plain JavaScript with CommonJS modules. Only the template output is TypeScript.
 6. **Test with mocks**: Generator tests don't actually create files on disk — they use `sao.mock()` to simulate generation.
 7. **Lockfile-lint**: Both the generator and template validate lockfiles — if you change the package manager config, update the lint:lockfile script accordingly.
+8. **Package managers**: The supported package managers are pnpm (default/recommended) and npm. Yarn is not supported. The `saofile.js` `actions()` handler dynamically sets the `lint:lockfile` script to use `pnpm-lock.yaml` or `package-lock.json` based on the user's choice.
