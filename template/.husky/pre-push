@@ -1,1 +1,1 @@
-npm run lint && npm run test
+<%= npmClient %> run lint && <%= npmClient %> run test
