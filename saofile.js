@@ -112,6 +112,12 @@ module.exports = {
   async completed() {
     const spawn = require('child_process').spawnSync
     spawn('git', ['init', '-b', 'main'], { cwd: this.outDir })
+
+    const repoUrl = this.answers.projectRepository
+    if (repoUrl) {
+      const remoteUrl = repoUrl.endsWith('.git') ? repoUrl : `${repoUrl}.git`
+      spawn('git', ['remote', 'add', 'origin', remoteUrl], { cwd: this.outDir })
+    }
     await this.npmInstall({ npmClient: this.answers.npmClient })
     await this.npmInstall({ npmClient: this.answers.npmClient, args: ['run', 'prepare'] })
     this.showProjectTips()
