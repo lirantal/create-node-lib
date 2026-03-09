@@ -1,3 +1,10 @@
+## [2.11.2](https://github.com/lirantal/create-node-lib/compare/v2.11.1...v2.11.2) (2026-03-09)
+
+
+### Bug Fixes
+
+* migration to pnpm in hooks and lockfile ([249a50e](https://github.com/lirantal/create-node-lib/commit/249a50ed71a00abd37ccf1987b6c9a33d00745d9))
+
 ## [2.11.1](https://github.com/lirantal/create-node-lib/compare/v2.11.0...v2.11.1) (2026-03-09)
 
 
