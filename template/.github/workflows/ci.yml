@@ -12,17 +12,19 @@ jobs:
     runs-on: ${{matrix.platform}}
     steps:
       - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
       - uses: actions/setup-node@v6
         with:
           node-version: ${{matrix.node}}
+          cache: 'pnpm'
       - name: install dependencies
-        run: npm ci
+        run: pnpm install --frozen-lockfile
       - name: lint code
-        run: npm run lint
+        run: pnpm run lint
       - name: build project
-        run: npm run build
+        run: pnpm run build
       - name: run tests
-        run: npm run test
+        run: pnpm run test
       - name: coverage
         uses: codecov/codecov-action@v5
         if: github.actor != 'dependabot[bot]'
@@ -38,12 +40,14 @@ jobs:
     needs: test
     steps:
       - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
       - uses: actions/setup-node@v6
         with:
           node-version: "22.x"
+          cache: 'pnpm'
       - name: install dependencies
-        run: npm ci
+        run: pnpm install --frozen-lockfile
       - name: build project
-        run: npm run build
+        run: pnpm run build
       - name: release preview with pkr-pr-new
-        run: npx pkg-pr-new publish
+        run: pnpx pkg-pr-new publish
