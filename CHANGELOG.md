@@ -1,3 +1,11 @@
+## [2.11.1](https://github.com/lirantal/create-node-lib/compare/v2.11.0...v2.11.1) (2026-03-09)
+
+
+### Bug Fixes
+
+* Update markdownlint-cli version in package.json ([192bd88](https://github.com/lirantal/create-node-lib/commit/192bd88e1fad3db083e129a1cfc80ec0d7638ece))
+* Update markdownlint-cli version to 0.48.0 ([f601761](https://github.com/lirantal/create-node-lib/commit/f6017616ed11c89184f201dd9dcb49d9de912954))
+
 # [2.11.0](https://github.com/lirantal/create-node-lib/compare/v2.10.1...v2.11.0) (2026-03-09)
 
 
