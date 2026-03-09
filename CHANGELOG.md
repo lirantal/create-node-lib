@@ -1,3 +1,18 @@
+# [2.10.0](https://github.com/lirantal/create-node-lib/compare/v2.9.14...v2.10.0) (2026-03-09)
+
+
+### Bug Fixes
+
+* migration to pnpm in workflows ([e6168a4](https://github.com/lirantal/create-node-lib/commit/e6168a498a62f8ab0bb94ec0e38106f3395d37f4))
+* secure defaults for pnpm and npm config and up to date Node.js version ([dc97ca3](https://github.com/lirantal/create-node-lib/commit/dc97ca3f5929711e780a67842620dea7e5be44ea))
+
+
+### Features
+
+* add devcontainer support ([ac2bd5e](https://github.com/lirantal/create-node-lib/commit/ac2bd5e662368bab6e5a7df0c9d1f6ec4a919fbd))
+* move out yarn, add in pnpm ([e6c4e0e](https://github.com/lirantal/create-node-lib/commit/e6c4e0e54bf801dd1e4c1e387ccc0f8506e4a546))
+* update versions for actions and deps ([0deb50c](https://github.com/lirantal/create-node-lib/commit/0deb50ceb7b2560143994645b6cb01e97139bef3))
+
 ## [2.9.14](https://github.com/lirantal/create-node-lib/compare/v2.9.13...v2.9.14) (2026-03-09)
 
 
