@@ -1,3 +1,10 @@
+## [2.9.14](https://github.com/lirantal/create-node-lib/compare/v2.9.13...v2.9.14) (2026-03-09)
+
+
+### Bug Fixes
+
+* Modify automerge.yml to add 'dependencies' label ([d169a3a](https://github.com/lirantal/create-node-lib/commit/d169a3abaa4e9831d522a7a0509a1badc12e77c2))
+
 ## [2.9.13](https://github.com/lirantal/create-node-lib/compare/v2.9.12...v2.9.13) (2026-03-08)
 
 
