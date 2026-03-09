@@ -110,7 +110,8 @@ module.exports = {
     ]
   },
   async completed() {
-    this.gitInit()
+    const spawn = require('child_process').spawnSync
+    spawn('git', ['init', '-b', 'main'], { cwd: this.outDir })
     await this.npmInstall({ npmClient: this.answers.npmClient })
     await this.npmInstall({ npmClient: this.answers.npmClient, args: ['run', 'prepare'] })
     this.showProjectTips()
