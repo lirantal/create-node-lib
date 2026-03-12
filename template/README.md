@@ -1,8 +1,10 @@
 <!-- markdownlint-disable -->
 
-<p align="center"><h1 align="center">
-  <%= projectName %>
-</h1>
+<p align="center">
+  <h1 align="center">
+    <%= projectName %>
+  </h1>
+</p>
 
 <p align="center">
   <%= description %>
