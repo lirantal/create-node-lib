@@ -21,7 +21,7 @@ The scaffolding engine that prompts users and generates projects:
 The EJS template files that become the generated project. These use placeholders like `<%= projectName %>`, `<%= author %>`, `<%= email %>`, `<%= username %>`, `<%= projectRepository %>`, and helpers like `<%= npmClientInstall(npmClient) %>` and `<%- changesetRepo({ projectRepository }) %>`.
 
 The generated project includes:
-- TypeScript source in `src/` with dual ESM/CJS output via tsup
+- TypeScript source in `src/` with dual ESM/CJS output via tsdown
 - Node.js built-in test runner with c8 coverage
 - ESLint (neostandard) + eslint-plugin-security + Prettier
 - Changesets for versioning and releases
@@ -57,7 +57,7 @@ The generated project includes:
 
 | Command | Purpose |
 |---------|---------|
-| `npm run build` | `tsc && tsup` — compile TypeScript to ESM + CJS |
+| `npm run build` | `tsc && tsdown` — compile TypeScript to ESM + CJS |
 | `npm test` | `c8 node --import tsx --test` — run tests with coverage |
 | `npm run lint` | ESLint + lockfile-lint + markdownlint |
 | `npm run lint:fix` | ESLint with auto-fix |
