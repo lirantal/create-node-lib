@@ -1,3 +1,17 @@
+# [2.12.0](https://github.com/lirantal/create-node-lib/compare/v2.11.2...v2.12.0) (2026-03-13)
+
+
+### Bug Fixes
+
+* gitignore should include dist/ ([33bcda7](https://github.com/lirantal/create-node-lib/commit/33bcda76bde22c7ac6828b129814aab8044ef43c))
+* README had missing closing tags for h1 ([02302f6](https://github.com/lirantal/create-node-lib/commit/02302f6854b15c467e471f6e353824a96fe3406d))
+* run directly with tsx ([17d82e5](https://github.com/lirantal/create-node-lib/commit/17d82e5bf503406571cee81f2947f91792674201))
+
+
+### Features
+
+* migrate from tsup to tsdown ([0b0be21](https://github.com/lirantal/create-node-lib/commit/0b0be2147fd632cdee79ae463ba2add3b92d809c))
+
 ## [2.11.2](https://github.com/lirantal/create-node-lib/compare/v2.11.1...v2.11.2) (2026-03-09)
 
 
