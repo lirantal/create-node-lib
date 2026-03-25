@@ -1,3 +1,10 @@
+## [2.12.1](https://github.com/lirantal/create-node-lib/compare/v2.12.0...v2.12.1) (2026-03-25)
+
+
+### Bug Fixes
+
+* delete template/.lychee.toml ([b75279b](https://github.com/lirantal/create-node-lib/commit/b75279bb59c26640d4af14af660e1e6aa548697b))
+
 # [2.12.0](https://github.com/lirantal/create-node-lib/compare/v2.11.2...v2.12.0) (2026-03-13)
 
 
