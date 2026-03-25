@@ -1,3 +1,15 @@
+# [2.13.0](https://github.com/lirantal/create-node-lib/compare/v2.12.1...v2.13.0) (2026-03-25)
+
+
+### Bug Fixes
+
+* add additional ignores to ESLint configuration ([f527fca](https://github.com/lirantal/create-node-lib/commit/f527fcabb420f191cd8be142d2d86ed82f8769a5))
+
+
+### Features
+
+* update devcontainer configuration with new features ([839e57c](https://github.com/lirantal/create-node-lib/commit/839e57c0e2d84c111bbe55dd018b7f885a1e95da))
+
 ## [2.12.1](https://github.com/lirantal/create-node-lib/compare/v2.12.0...v2.12.1) (2026-03-25)
 
 
