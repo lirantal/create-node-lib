@@ -1,0 +1,9 @@
+name: "<%= projectName %>"
+version: 1.0.0
+description: "<%= description %>"
+author: "<%= author %>"
+dependencies:
+  apm:
+    - lirantal/nodejs-cli-apps-best-practices/skills/nodejs-cli-best-practices
+  mcp: []
+scripts: {}
