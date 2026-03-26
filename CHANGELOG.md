@@ -1,3 +1,14 @@
+## [2.13.3](https://github.com/lirantal/create-node-lib/compare/v2.13.2...v2.13.3) (2026-03-26)
+
+
+### Bug Fixes
+
+* disable release-preview job in ci.yml ([34f1f88](https://github.com/lirantal/create-node-lib/commit/34f1f888258a116bf9106d99aab54eee82f1f43f))
+* update create-issue-from-file action to v6.0.0 ([cda8b3a](https://github.com/lirantal/create-node-lib/commit/cda8b3a8cfcafd9c5d1ad355c49a691467fac663))
+* update pnpm/action-setup to version 5 ([5b1ba6c](https://github.com/lirantal/create-node-lib/commit/5b1ba6c02e7dc4b581d7aec3c7a8c65eea0bdef8))
+* Update pnpm/action-setup to version 5 ([94f27a1](https://github.com/lirantal/create-node-lib/commit/94f27a17229fc46ea8885c5b8b8d9c6b28e68d70))
+* Upgrade pnpm/action-setup to version 5 ([23b43a8](https://github.com/lirantal/create-node-lib/commit/23b43a8278960119be8d935bc740121bfbddf357))
+
 ## [2.13.2](https://github.com/lirantal/create-node-lib/compare/v2.13.1...v2.13.2) (2026-03-26)
 
 
