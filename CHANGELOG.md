@@ -1,3 +1,10 @@
+# [2.14.0](https://github.com/lirantal/create-node-lib/compare/v2.13.4...v2.14.0) (2026-03-26)
+
+
+### Features
+
+* add apm manifest ([583ed58](https://github.com/lirantal/create-node-lib/commit/583ed58987e0c4644477fed879d8b55f543be69b))
+
 ## [2.13.4](https://github.com/lirantal/create-node-lib/compare/v2.13.3...v2.13.4) (2026-03-26)
 
 
