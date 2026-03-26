@@ -1,3 +1,11 @@
+## [2.13.4](https://github.com/lirantal/create-node-lib/compare/v2.13.3...v2.13.4) (2026-03-26)
+
+
+### Bug Fixes
+
+* include template npmrc in npm package like gitignore ([2614557](https://github.com/lirantal/create-node-lib/commit/2614557c961c7414920ce94f20d2388aba075b97))
+* more featuredful devcontainer setup ([2645559](https://github.com/lirantal/create-node-lib/commit/26455598878ba76d6420bcbead552465a13f6179))
+
 ## [2.13.3](https://github.com/lirantal/create-node-lib/compare/v2.13.2...v2.13.3) (2026-03-26)
 
 
