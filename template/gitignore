@@ -1,4 +1,8 @@
 .dccache
+
+# APM dependencies
+apm_modules/
+
 # Logs
 logs
 *.log

@@ -1,3 +1,48 @@
+## [2.13.3](https://github.com/lirantal/create-node-lib/compare/v2.13.2...v2.13.3) (2026-03-26)
+
+
+### Bug Fixes
+
+* disable release-preview job in ci.yml ([34f1f88](https://github.com/lirantal/create-node-lib/commit/34f1f888258a116bf9106d99aab54eee82f1f43f))
+* update create-issue-from-file action to v6.0.0 ([cda8b3a](https://github.com/lirantal/create-node-lib/commit/cda8b3a8cfcafd9c5d1ad355c49a691467fac663))
+* update pnpm/action-setup to version 5 ([5b1ba6c](https://github.com/lirantal/create-node-lib/commit/5b1ba6c02e7dc4b581d7aec3c7a8c65eea0bdef8))
+* Update pnpm/action-setup to version 5 ([94f27a1](https://github.com/lirantal/create-node-lib/commit/94f27a17229fc46ea8885c5b8b8d9c6b28e68d70))
+* Upgrade pnpm/action-setup to version 5 ([23b43a8](https://github.com/lirantal/create-node-lib/commit/23b43a8278960119be8d935bc740121bfbddf357))
+
+## [2.13.2](https://github.com/lirantal/create-node-lib/compare/v2.13.1...v2.13.2) (2026-03-26)
+
+
+### Bug Fixes
+
+* Upgrade labeler action from v5 to v6 ([cc0276c](https://github.com/lirantal/create-node-lib/commit/cc0276cf627a1cd177ba82154565867df693c11d))
+
+## [2.13.1](https://github.com/lirantal/create-node-lib/compare/v2.13.0...v2.13.1) (2026-03-26)
+
+
+### Bug Fixes
+
+*  update devDependencies in package.json ([1f296d9](https://github.com/lirantal/create-node-lib/commit/1f296d9d0474e6f7898b8d51758abd9279ba2446))
+* Add APM dependencies to gitignore ([ad7b3d9](https://github.com/lirantal/create-node-lib/commit/ad7b3d955820998ed095dd8478e9c024672ab8a9))
+
+# [2.13.0](https://github.com/lirantal/create-node-lib/compare/v2.12.1...v2.13.0) (2026-03-25)
+
+
+### Bug Fixes
+
+* add additional ignores to ESLint configuration ([f527fca](https://github.com/lirantal/create-node-lib/commit/f527fcabb420f191cd8be142d2d86ed82f8769a5))
+
+
+### Features
+
+* update devcontainer configuration with new features ([839e57c](https://github.com/lirantal/create-node-lib/commit/839e57c0e2d84c111bbe55dd018b7f885a1e95da))
+
+## [2.12.1](https://github.com/lirantal/create-node-lib/compare/v2.12.0...v2.12.1) (2026-03-25)
+
+
+### Bug Fixes
+
+* delete template/.lychee.toml ([b75279b](https://github.com/lirantal/create-node-lib/commit/b75279bb59c26640d4af14af660e1e6aa548697b))
+
 # [2.12.0](https://github.com/lirantal/create-node-lib/compare/v2.11.2...v2.12.0) (2026-03-13)
 
 

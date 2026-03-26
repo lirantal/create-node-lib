@@ -3,7 +3,15 @@ import neostandard, { resolveIgnoresFromGitignore, plugins } from 'neostandard'
 
 export default [
   ...neostandard({
-    ignores: ['__tests__/**/*.ts', 'dist/**', ...resolveIgnoresFromGitignore()],
+    ignores: ['__tests__/**/*.ts', 'dist/**', 
+      '.cursor/**',
+      '.devcontainer/**',
+      '.github/**',
+      '.vscode/**',
+      '.gemini/**',
+      '.claude/**',
+      '.agents/**',
+      ...resolveIgnoresFromGitignore()],
     ts: true,   // Enable TypeScript support,
     filesTs: ['src/**/*.ts', '__tests__/**/*.ts']
   }),
