@@ -1,3 +1,11 @@
+## [2.13.1](https://github.com/lirantal/create-node-lib/compare/v2.13.0...v2.13.1) (2026-03-26)
+
+
+### Bug Fixes
+
+*  update devDependencies in package.json ([1f296d9](https://github.com/lirantal/create-node-lib/commit/1f296d9d0474e6f7898b8d51758abd9279ba2446))
+* Add APM dependencies to gitignore ([ad7b3d9](https://github.com/lirantal/create-node-lib/commit/ad7b3d955820998ed095dd8478e9c024672ab8a9))
+
 # [2.13.0](https://github.com/lirantal/create-node-lib/compare/v2.12.1...v2.13.0) (2026-03-25)
 
 
