@@ -34,6 +34,7 @@ describe('all the template files are accountable for', () => {
     expect(stream.fileList).toContain('README.md')
     expect(stream.fileList).toContain('__tests__/app.test.ts')
     expect(stream.fileList).toContain('package.json')
+    expect(stream.fileList).toContain('apm.yml')
   })
 
   test('Generator input creates a valid package.json file', async () => {
@@ -63,6 +64,11 @@ describe('all the template files are accountable for', () => {
     )
 
     const pkg = JSON.parse(await stream.readFile('package.json'))
+    const apmYaml = await stream.readFile('apm.yml')
+    expect(apmYaml).toContain(`name: "${mockProjectName}"`)
+    expect(apmYaml).toContain(`description: "${mockProjectDescription}"`)
+    expect(apmYaml).toContain(`author: "${mockProjectAuthor}"`)
+
     expect(pkg.name).toBe(mockProjectName)
     expect(pkg.description).toBe(mockProjectDescription)
     expect(pkg.author.name).toBe(mockProjectAuthor)
