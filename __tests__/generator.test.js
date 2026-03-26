@@ -26,6 +26,7 @@ describe('all the template files are accountable for', () => {
     )
 
     expect(stream.fileList).toContain('.gitignore')
+    expect(stream.fileList).toContain('.npmrc')
     expect(stream.fileList).toContain('.prettierignore')
     expect(stream.fileList).toContain('.prettierrc.json')
     expect(stream.fileList).toContain('.github/workflows/ci.yml')

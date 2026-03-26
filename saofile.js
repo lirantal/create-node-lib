@@ -112,7 +112,8 @@ module.exports = {
       {
         type: 'move',
         patterns: {
-          gitignore: '.gitignore'
+          gitignore: '.gitignore',
+          npmrc: '.npmrc'
         }
       }
     ]
