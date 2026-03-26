@@ -1,3 +1,10 @@
+## [2.13.2](https://github.com/lirantal/create-node-lib/compare/v2.13.1...v2.13.2) (2026-03-26)
+
+
+### Bug Fixes
+
+* Upgrade labeler action from v5 to v6 ([cc0276c](https://github.com/lirantal/create-node-lib/commit/cc0276cf627a1cd177ba82154565867df693c11d))
+
 ## [2.13.1](https://github.com/lirantal/create-node-lib/compare/v2.13.0...v2.13.1) (2026-03-26)
 
 
