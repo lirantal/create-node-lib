@@ -1,3 +1,10 @@
+# [2.15.0](https://github.com/lirantal/create-node-lib/compare/v2.14.0...v2.15.0) (2026-04-10)
+
+
+### Features
+
+* dependabot cooldowns for github actions ([19ebd56](https://github.com/lirantal/create-node-lib/commit/19ebd56773f68ad43e8eddb4a11161a2d75bb495))
+
 # [2.14.0](https://github.com/lirantal/create-node-lib/compare/v2.13.4...v2.14.0) (2026-03-26)
 
 
