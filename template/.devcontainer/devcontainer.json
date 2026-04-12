@@ -10,6 +10,15 @@
             "shellautocompletion": true
         }
     },
+    // forwardPorts: VS Code / Cursor Ports UI, auto-forward, portsAttributes (spec “forwarding”).
+    "forwardPorts": [
+        5959
+    ],
+    // appPort: Docker publish (127.0.0.1:port:port) for @devcontainers/cli — e.g. .devcontainer/start.sh.
+    // Editors still apply appPort when they create the container; keep this list aligned with forwardPorts.
+    "appPort": [
+        5959
+    ],
     "mounts": [
         "source=${localEnv:HOME}/.gitconfig,target=/home/node/.gitconfig,type=bind,consistency=cached",
         // mount host user home directories for agents:
