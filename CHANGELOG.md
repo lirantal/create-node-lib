@@ -1,3 +1,10 @@
+## [2.15.3](https://github.com/lirantal/create-node-lib/compare/v2.15.2...v2.15.3) (2026-04-12)
+
+
+### Bug Fixes
+
+* port mapping in devcontainer ([a0277a5](https://github.com/lirantal/create-node-lib/commit/a0277a59370f66e332d11231bcaab2f11eca41c9))
+
 ## [2.15.2](https://github.com/lirantal/create-node-lib/compare/v2.15.1...v2.15.2) (2026-04-12)
 
 
