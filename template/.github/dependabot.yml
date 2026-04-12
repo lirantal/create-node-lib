@@ -8,6 +8,11 @@ updates:
       # Prefix all commit messages with "chore: "
       prefix: "chore"
     open-pull-requests-limit: 10
+    cooldown:
+      default-days: 7
+      semver-major-days: 7
+      semver-minor-days: 7
+      semver-patch-days: 7
 
   - package-ecosystem: "npm"
     directory: "/"
@@ -17,6 +22,11 @@ updates:
     schedule:
       interval: "weekly"
     open-pull-requests-limit: 10
+    cooldown:
+      default-days: 7
+      semver-major-days: 7
+      semver-minor-days: 7
+      semver-patch-days: 7
     # Use the 'dependencies' default label and add
     # the 'automerge' one for automerge github action support
     labels:
@@ -41,3 +51,4 @@ updates:
     # ignore:
     #   - dependency-name: tap
     #     update-types: ["version-update:semver-major"]
+
