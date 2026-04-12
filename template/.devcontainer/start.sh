@@ -77,4 +77,10 @@ fi
 npx --yes "@devcontainers/cli@${CLI_VERSION}" up "${UP_ARGS[@]}"
 
 echo "Dropping into container shell..."
-npx --yes "@devcontainers/cli@${CLI_VERSION}" exec --workspace-folder "$WORKSPACE_FOLDER" bash
+# Resolve TERM to something the container's terminfo knows about.
+# Terminals like kitty, ghostty, alacritty set custom TERM values the container won't have.
+# Fall back to xterm-256color (truecolor still works via COLORTERM=truecolor).
+if ! infocmp "${TERM:-xterm-256color}" &>/dev/null 2>&1; then
+  TERM=xterm-256color
+fi
+TERM="${TERM:-xterm-256color}" npx --yes @devcontainers/cli@${CLI_VERSION} exec --workspace-folder "$WORKSPACE_FOLDER" -- env TERM="${TERM:-xterm-256color}" COLORTERM=truecolor bash
