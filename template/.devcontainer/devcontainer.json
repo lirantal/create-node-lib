@@ -25,7 +25,6 @@
 	// ],
     // --
     "postCreateCommand": {
-        "git-setup": "git config --local commit.gpgsign false; git config --local core.pager \"less -R\";",
         "pnpm-install": "[ -f package.json ] && pnpm install || true",
         "post-create": "bash .devcontainer/post-create.sh"
     },

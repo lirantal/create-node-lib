@@ -1,6 +1,12 @@
 #!/bin/bash
 set -e
 
+# Local git prefs only apply inside a repository; skip when there is no .git (avoids postCreate failure).
+if git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+  git config --local commit.gpgsign false
+  git config --local core.pager 'less -R'
+fi
+
 # install apm (the Agent Package Manager: https://github.com/microsoft/apm)
 curl -sSL https://aka.ms/apm-unix | sh
 
