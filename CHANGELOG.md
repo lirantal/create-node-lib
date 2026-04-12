@@ -1,3 +1,10 @@
+## [2.15.2](https://github.com/lirantal/create-node-lib/compare/v2.15.1...v2.15.2) (2026-04-12)
+
+
+### Bug Fixes
+
+* only run git repo commands if git is detected ([7928a69](https://github.com/lirantal/create-node-lib/commit/7928a69b5fb35d3a9c36f6be46d485ab78f19f49))
+
 ## [2.15.1](https://github.com/lirantal/create-node-lib/compare/v2.15.0...v2.15.1) (2026-04-12)
 
 
