@@ -1,3 +1,10 @@
+## [2.15.1](https://github.com/lirantal/create-node-lib/compare/v2.15.0...v2.15.1) (2026-04-12)
+
+
+### Bug Fixes
+
+* chmod executables in template devcontainer ([0115d86](https://github.com/lirantal/create-node-lib/commit/0115d86e4a838e45f2916a6eb7363e25e1488182))
+
 # [2.15.0](https://github.com/lirantal/create-node-lib/compare/v2.14.0...v2.15.0) (2026-04-10)
 
 
