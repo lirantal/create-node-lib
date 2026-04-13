@@ -1,3 +1,10 @@
+## [2.15.4](https://github.com/lirantal/create-node-lib/compare/v2.15.3...v2.15.4) (2026-04-13)
+
+
+### Bug Fixes
+
+* support term info from host ([3509575](https://github.com/lirantal/create-node-lib/commit/35095752e422b9e3352b661fd1217c69354737ab))
+
 ## [2.15.3](https://github.com/lirantal/create-node-lib/compare/v2.15.2...v2.15.3) (2026-04-12)
 
 
