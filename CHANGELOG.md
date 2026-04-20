@@ -1,3 +1,11 @@
+## [2.15.5](https://github.com/lirantal/create-node-lib/compare/v2.15.4...v2.15.5) (2026-04-20)
+
+
+### Bug Fixes
+
+* Update markdown lint command to ignore apm_modules ([5a970d0](https://github.com/lirantal/create-node-lib/commit/5a970d06887644e26f23a9f1b6eaf2f6b6f67db3))
+* Update markdown linting script to include apm_modules ([e278132](https://github.com/lirantal/create-node-lib/commit/e278132510fdeb002b98c1e2e7de9efc60b903a1))
+
 ## [2.15.4](https://github.com/lirantal/create-node-lib/compare/v2.15.3...v2.15.4) (2026-04-13)
 
 
