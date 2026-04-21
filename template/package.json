@@ -46,7 +46,8 @@
     "coverage:view": "open coverage/lcov-report/index.html",
     "prepare": "husky",
     "version": "changeset version",
-    "release": "changeset publish"
+    "release": "changeset publish",
+    "release:create": "changeset && git add .changeset && git commit -m \"chore: release\" && git push origin HEAD --no-verify"
   },
   "author": {
     "name": "<%= author %>",
