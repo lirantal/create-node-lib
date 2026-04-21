@@ -1,3 +1,10 @@
+# [2.16.0](https://github.com/lirantal/create-node-lib/compare/v2.15.5...v2.16.0) (2026-04-21)
+
+
+### Features
+
+* Add release:create script to package.json ([7580372](https://github.com/lirantal/create-node-lib/commit/758037246eaad2cdc1c465556c67b95763093a62))
+
 ## [2.15.5](https://github.com/lirantal/create-node-lib/compare/v2.15.4...v2.15.5) (2026-04-20)
 
 
