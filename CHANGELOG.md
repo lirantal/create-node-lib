@@ -1,3 +1,11 @@
+## [2.16.1](https://github.com/lirantal/create-node-lib/compare/v2.16.0...v2.16.1) (2026-04-26)
+
+
+### Bug Fixes
+
+* remove deprecated Snyk vulnerabilities badge from README ([#43](https://github.com/lirantal/create-node-lib/issues/43)) ([2a7b2f0](https://github.com/lirantal/create-node-lib/commit/2a7b2f0f026e89c49070978948752abfd06a0cc7))
+* remove Snyk badge from README ([b776931](https://github.com/lirantal/create-node-lib/commit/b77693189aee5628b85af8f2c92b3945b30cae8f))
+
 # [2.16.0](https://github.com/lirantal/create-node-lib/compare/v2.15.5...v2.16.0) (2026-04-21)
 
 
