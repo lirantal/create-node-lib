@@ -1,3 +1,10 @@
+## [2.16.2](https://github.com/lirantal/create-node-lib/compare/v2.16.1...v2.16.2) (2026-04-28)
+
+
+### Bug Fixes
+
+* Update CI badge link in README.md ([eb20ad2](https://github.com/lirantal/create-node-lib/commit/eb20ad278266cae440e609baaa398eec65b22642))
+
 ## [2.16.1](https://github.com/lirantal/create-node-lib/compare/v2.16.0...v2.16.1) (2026-04-26)
 
 
