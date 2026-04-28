@@ -1,3 +1,10 @@
+## [2.16.3](https://github.com/lirantal/create-node-lib/compare/v2.16.2...v2.16.3) (2026-04-28)
+
+
+### Bug Fixes
+
+* Update dependabot.yml with labels for automerge ([d3f645a](https://github.com/lirantal/create-node-lib/commit/d3f645a95ff0520642008aad443b1fe43924b7e0))
+
 ## [2.16.2](https://github.com/lirantal/create-node-lib/compare/v2.16.1...v2.16.2) (2026-04-28)
 
 
