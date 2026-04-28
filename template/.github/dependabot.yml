@@ -13,6 +13,11 @@ updates:
       semver-major-days: 7
       semver-minor-days: 7
       semver-patch-days: 7
+    # Use the 'dependencies' default label and add
+    # the 'automerge' one for automerge github action support
+    labels:
+      - "dependencies"
+      - "automerge"
 
   - package-ecosystem: "npm"
     directory: "/"
