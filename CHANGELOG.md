@@ -1,3 +1,11 @@
+## [2.16.4](https://github.com/lirantal/create-node-lib/compare/v2.16.3...v2.16.4) (2026-04-29)
+
+
+### Bug Fixes
+
+* Add repository initialization workflow ([ed1d211](https://github.com/lirantal/create-node-lib/commit/ed1d211bd553879ebf831beb803f72261f230f46))
+* Change merge labels for automerge action ([ae623dd](https://github.com/lirantal/create-node-lib/commit/ae623ddad781ed57fd97dcc24c95b7d8d55cf775))
+
 ## [2.16.3](https://github.com/lirantal/create-node-lib/compare/v2.16.2...v2.16.3) (2026-04-28)
 
 
