@@ -31,8 +31,8 @@ jobs:
         uses: "pascalgn/automerge-action@v0.16.4"
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-          # we only merge PRs with labels of "dependencies" 
-          MERGE_LABELS: "automerge,dependencies"
+          # we only merge PRs with labels of "automerge" 
+          MERGE_LABELS: "automerge"
           MERGE_REMOVE_LABELS: "automerge"
           MERGE_METHOD: "squash"
           MERGE_COMMIT_MESSAGE: "automatic"
