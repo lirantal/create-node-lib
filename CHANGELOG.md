@@ -1,3 +1,10 @@
+## [2.16.5](https://github.com/lirantal/create-node-lib/compare/v2.16.4...v2.16.5) (2026-04-29)
+
+
+### Bug Fixes
+
+* Simplify cooldown settings in dependabot.yml ([ea84937](https://github.com/lirantal/create-node-lib/commit/ea849374e41d47f306a8d14ef2cd703a6300bbb8))
+
 ## [2.16.4](https://github.com/lirantal/create-node-lib/compare/v2.16.3...v2.16.4) (2026-04-29)
 
 
