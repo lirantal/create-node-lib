@@ -1,3 +1,11 @@
+## [2.16.6](https://github.com/lirantal/create-node-lib/compare/v2.16.5...v2.16.6) (2026-04-30)
+
+
+### Bug Fixes
+
+* Add MERGE_READY_STATE to automerge workflow ([a05f4c9](https://github.com/lirantal/create-node-lib/commit/a05f4c9ad230c4dec7409c6920fff748ddad08c0))
+* Add workflow step to create dependencies label ([7b47182](https://github.com/lirantal/create-node-lib/commit/7b471823aa122e181bd89ef9d3382a3e08c3fbd4))
+
 ## [2.16.5](https://github.com/lirantal/create-node-lib/compare/v2.16.4...v2.16.5) (2026-04-29)
 
 
