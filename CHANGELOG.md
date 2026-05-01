@@ -1,3 +1,10 @@
+## [2.16.7](https://github.com/lirantal/create-node-lib/compare/v2.16.6...v2.16.7) (2026-05-01)
+
+
+### Bug Fixes
+
+* Simplify condition for automerge job ([2bc7720](https://github.com/lirantal/create-node-lib/commit/2bc7720f7e78c883633d1a5bd36debdebfca2ce4))
+
 ## [2.16.6](https://github.com/lirantal/create-node-lib/compare/v2.16.5...v2.16.6) (2026-04-30)
 
 
