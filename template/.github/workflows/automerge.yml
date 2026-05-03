@@ -19,9 +19,6 @@ on:
 jobs:
   automerge:
     runs-on: ubuntu-latest
-    if: >
-      github.event_name != 'check_suite' ||
-      github.event.check_suite.pull_requests[0] != null
     permissions:
       contents: write
       pull-requests: write
@@ -31,8 +28,9 @@ jobs:
         uses: "pascalgn/automerge-action@v0.16.4"
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-          # we only merge PRs with labels of "dependencies" 
-          MERGE_LABELS: "automerge,dependencies"
+          # we only merge PRs with labels of "automerge" 
+          MERGE_LABELS: "automerge"
+          MERGE_READY_STATE: "clean,has_hooks,unknown"
           MERGE_REMOVE_LABELS: "automerge"
           MERGE_METHOD: "squash"
           MERGE_COMMIT_MESSAGE: "automatic"

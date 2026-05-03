@@ -1,3 +1,77 @@
+## [2.16.7](https://github.com/lirantal/create-node-lib/compare/v2.16.6...v2.16.7) (2026-05-01)
+
+
+### Bug Fixes
+
+* Simplify condition for automerge job ([2bc7720](https://github.com/lirantal/create-node-lib/commit/2bc7720f7e78c883633d1a5bd36debdebfca2ce4))
+
+## [2.16.6](https://github.com/lirantal/create-node-lib/compare/v2.16.5...v2.16.6) (2026-04-30)
+
+
+### Bug Fixes
+
+* Add MERGE_READY_STATE to automerge workflow ([a05f4c9](https://github.com/lirantal/create-node-lib/commit/a05f4c9ad230c4dec7409c6920fff748ddad08c0))
+* Add workflow step to create dependencies label ([7b47182](https://github.com/lirantal/create-node-lib/commit/7b471823aa122e181bd89ef9d3382a3e08c3fbd4))
+
+## [2.16.5](https://github.com/lirantal/create-node-lib/compare/v2.16.4...v2.16.5) (2026-04-29)
+
+
+### Bug Fixes
+
+* Simplify cooldown settings in dependabot.yml ([ea84937](https://github.com/lirantal/create-node-lib/commit/ea849374e41d47f306a8d14ef2cd703a6300bbb8))
+
+## [2.16.4](https://github.com/lirantal/create-node-lib/compare/v2.16.3...v2.16.4) (2026-04-29)
+
+
+### Bug Fixes
+
+* Add repository initialization workflow ([ed1d211](https://github.com/lirantal/create-node-lib/commit/ed1d211bd553879ebf831beb803f72261f230f46))
+* Change merge labels for automerge action ([ae623dd](https://github.com/lirantal/create-node-lib/commit/ae623ddad781ed57fd97dcc24c95b7d8d55cf775))
+
+## [2.16.3](https://github.com/lirantal/create-node-lib/compare/v2.16.2...v2.16.3) (2026-04-28)
+
+
+### Bug Fixes
+
+* Update dependabot.yml with labels for automerge ([d3f645a](https://github.com/lirantal/create-node-lib/commit/d3f645a95ff0520642008aad443b1fe43924b7e0))
+
+## [2.16.2](https://github.com/lirantal/create-node-lib/compare/v2.16.1...v2.16.2) (2026-04-28)
+
+
+### Bug Fixes
+
+* Update CI badge link in README.md ([eb20ad2](https://github.com/lirantal/create-node-lib/commit/eb20ad278266cae440e609baaa398eec65b22642))
+
+## [2.16.1](https://github.com/lirantal/create-node-lib/compare/v2.16.0...v2.16.1) (2026-04-26)
+
+
+### Bug Fixes
+
+* remove deprecated Snyk vulnerabilities badge from README ([#43](https://github.com/lirantal/create-node-lib/issues/43)) ([2a7b2f0](https://github.com/lirantal/create-node-lib/commit/2a7b2f0f026e89c49070978948752abfd06a0cc7))
+* remove Snyk badge from README ([b776931](https://github.com/lirantal/create-node-lib/commit/b77693189aee5628b85af8f2c92b3945b30cae8f))
+
+# [2.16.0](https://github.com/lirantal/create-node-lib/compare/v2.15.5...v2.16.0) (2026-04-21)
+
+
+### Features
+
+* Add release:create script to package.json ([7580372](https://github.com/lirantal/create-node-lib/commit/758037246eaad2cdc1c465556c67b95763093a62))
+
+## [2.15.5](https://github.com/lirantal/create-node-lib/compare/v2.15.4...v2.15.5) (2026-04-20)
+
+
+### Bug Fixes
+
+* Update markdown lint command to ignore apm_modules ([5a970d0](https://github.com/lirantal/create-node-lib/commit/5a970d06887644e26f23a9f1b6eaf2f6b6f67db3))
+* Update markdown linting script to include apm_modules ([e278132](https://github.com/lirantal/create-node-lib/commit/e278132510fdeb002b98c1e2e7de9efc60b903a1))
+
+## [2.15.4](https://github.com/lirantal/create-node-lib/compare/v2.15.3...v2.15.4) (2026-04-13)
+
+
+### Bug Fixes
+
+* support term info from host ([3509575](https://github.com/lirantal/create-node-lib/commit/35095752e422b9e3352b661fd1217c69354737ab))
+
 ## [2.15.3](https://github.com/lirantal/create-node-lib/compare/v2.15.2...v2.15.3) (2026-04-12)
 
 
