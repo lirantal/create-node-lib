@@ -8,6 +8,7 @@ main() {
   install_apm
   # install_opencode_cli
   install_1password_cli
+  install_snyk_cli
   run_deps_install
 }
 
@@ -28,9 +29,21 @@ install_opencode_cli() {
   curl -fsSL https://opencode.ai/install | bash
 }
 
-# Optional: Snyk CLI
-#   curl --compressed https://static.snyk.io/cli/latest/snyk-linux-arm64 -o snyk
-#   chmod +x ./snyk && sudo mv -f ./snyk /usr/local/bin/snyk
+install_snyk_cli() {
+  # https://docs.snyk.io/snyk-cli/install-the-snyk-cli
+  local url
+  case "$(uname -m)" in
+    aarch64 | arm64) url="https://static.snyk.io/cli/latest/snyk-linux-arm64" ;;
+    x86_64 | amd64) url="https://static.snyk.io/cli/latest/snyk-linux" ;;
+    *)
+      echo "post-create: skipping Snyk CLI (unsupported arch: $(uname -m))" >&2
+      return 0
+      ;;
+  esac
+  curl --compressed -fsSL "${url}" -o /tmp/snyk
+  chmod +x /tmp/snyk
+  sudo mv -f /tmp/snyk /usr/local/bin/snyk
+}
 
 install_1password_cli() {
   local op_version="2.32.1"
