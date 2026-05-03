@@ -1,3 +1,15 @@
+# [2.17.0](https://github.com/lirantal/create-node-lib/compare/v2.16.7...v2.17.0) (2026-05-03)
+
+
+### Bug Fixes
+
+* chmod executable files ([034b771](https://github.com/lirantal/create-node-lib/commit/034b77199ae06936272e8b6afc8a61e98132e9bc))
+
+
+### Features
+
+* devcontainer updates ([d5618de](https://github.com/lirantal/create-node-lib/commit/d5618def17a07c13b438795d96e5e26bdffab770))
+
 ## [2.16.7](https://github.com/lirantal/create-node-lib/compare/v2.16.6...v2.16.7) (2026-05-01)
 
 
