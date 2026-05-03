@@ -1,3 +1,10 @@
+## [2.17.1](https://github.com/lirantal/create-node-lib/compare/v2.17.0...v2.17.1) (2026-05-03)
+
+
+### Bug Fixes
+
+* add initialization script for development environment ([40cfb83](https://github.com/lirantal/create-node-lib/commit/40cfb8357638c5d78f88359663f7a785118ad7d9))
+
 # [2.17.0](https://github.com/lirantal/create-node-lib/compare/v2.16.7...v2.17.0) (2026-05-03)
 
 
