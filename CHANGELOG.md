@@ -1,3 +1,10 @@
+## [2.17.2](https://github.com/lirantal/create-node-lib/compare/v2.17.1...v2.17.2) (2026-05-03)
+
+
+### Bug Fixes
+
+* add Snyk CLI installation to post-create script ([5a40220](https://github.com/lirantal/create-node-lib/commit/5a40220e07daad422eac8a0666eb28602caa1043))
+
 ## [2.17.1](https://github.com/lirantal/create-node-lib/compare/v2.17.0...v2.17.1) (2026-05-03)
 
 
