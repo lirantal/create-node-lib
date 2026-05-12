@@ -1,3 +1,11 @@
+## [2.17.3](https://github.com/lirantal/create-node-lib/compare/v2.17.2...v2.17.3) (2026-05-12)
+
+
+### Bug Fixes
+
+* Add Node.js 24.x to CI workflow matrix ([#44](https://github.com/lirantal/create-node-lib/issues/44)) ([08d22e0](https://github.com/lirantal/create-node-lib/commit/08d22e0c5e2a6c87b7c745a80c5f73c7756b62cc))
+* Update Node.js version in markdown-lint workflow ([#45](https://github.com/lirantal/create-node-lib/issues/45)) ([aa23714](https://github.com/lirantal/create-node-lib/commit/aa237145026a04fced12e03c6f617065704b61e0))
+
 ## [2.17.2](https://github.com/lirantal/create-node-lib/compare/v2.17.1...v2.17.2) (2026-05-03)
 
 
