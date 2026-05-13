@@ -1,3 +1,10 @@
+# [2.18.0](https://github.com/lirantal/create-node-lib/compare/v2.17.4...v2.18.0) (2026-05-13)
+
+
+### Features
+
+* update secure configs for npm and pnpm ([e4f533a](https://github.com/lirantal/create-node-lib/commit/e4f533a73b3ca1c7d4373b76831b49b9d331a1dc))
+
 ## [2.17.4](https://github.com/lirantal/create-node-lib/compare/v2.17.3...v2.17.4) (2026-05-13)
 
 
