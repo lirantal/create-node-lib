@@ -1,3 +1,10 @@
+## [2.17.4](https://github.com/lirantal/create-node-lib/compare/v2.17.3...v2.17.4) (2026-05-13)
+
+
+### Bug Fixes
+
+* exclude pnpm-workspace.yaml when npm is selected as package manager ([#46](https://github.com/lirantal/create-node-lib/issues/46)) ([34891e1](https://github.com/lirantal/create-node-lib/commit/34891e1e9e1b5819ebea4dd36b6f42b3307d41e5))
+
 ## [2.17.3](https://github.com/lirantal/create-node-lib/compare/v2.17.2...v2.17.3) (2026-05-12)
 
 
