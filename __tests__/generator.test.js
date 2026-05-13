@@ -79,6 +79,28 @@ describe('all the template files are accountable for', () => {
     expect(pkg.scripts['lint:lockfile']).toEqual(mockScripts['lint:lockfile'])
   })
 
+  test('Generator includes pnpm-workspace.yaml when pnpm is selected', async () => {
+    const stream = await sao.mock(
+      { generator: template },
+      {
+        npmClient: 'pnpm'
+      }
+    )
+
+    expect(stream.fileList).toContain('pnpm-workspace.yaml')
+  })
+
+  test('Generator excludes pnpm-workspace.yaml when npm is selected', async () => {
+    const stream = await sao.mock(
+      { generator: template },
+      {
+        npmClient: 'npm'
+      }
+    )
+
+    expect(stream.fileList).not.toContain('pnpm-workspace.yaml')
+  })
+
   test('Generator input creates correct package.json scripts with npm as client', async () => {
     const mockScripts = {
       'lint:lockfile': 'lockfile-lint --path package-lock.json --validate-https --allowed-hosts npm'

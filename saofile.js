@@ -115,7 +115,15 @@ module.exports = {
           gitignore: '.gitignore',
           npmrc: '.npmrc'
         }
-      }
+      },
+      ...(npmClient !== 'pnpm'
+        ? [
+            {
+              type: 'remove',
+              files: 'pnpm-workspace.yaml'
+            }
+          ]
+        : [])
     ]
   },
   async completed() {
