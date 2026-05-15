@@ -1,3 +1,10 @@
+## [2.19.2](https://github.com/lirantal/create-node-lib/compare/v2.19.1...v2.19.2) (2026-05-15)
+
+
+### Bug Fixes
+
+* descriptions for npmrc file ([dce8594](https://github.com/lirantal/create-node-lib/commit/dce8594d4d5a14b1f14e2ac39745de6d64aaf97c))
+
 ## [2.19.1](https://github.com/lirantal/create-node-lib/compare/v2.19.0...v2.19.1) (2026-05-15)
 
 
