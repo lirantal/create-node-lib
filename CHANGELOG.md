@@ -1,3 +1,10 @@
+# [2.19.0](https://github.com/lirantal/create-node-lib/compare/v2.18.0...v2.19.0) (2026-05-15)
+
+
+### Features
+
+* enhance security policies in pnpm-workspace.yaml ([68df8f6](https://github.com/lirantal/create-node-lib/commit/68df8f644ef11dc789a157e3cc1c1ed72e5675c9))
+
 # [2.18.0](https://github.com/lirantal/create-node-lib/compare/v2.17.4...v2.18.0) (2026-05-13)
 
 
