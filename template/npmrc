@@ -1,11 +1,20 @@
 # npm security best practices
 # Source: https://github.com/lirantal/npm-security-best-practices
 
-# Do not run any lifecycle hook scripts such as postinstall for packages
+# SECURITY: do not run any lifecycle scripts (preinstall, install,
+# postinstall, etc.) for dependencies. Postinstall scripts are the
+# classic malware delivery vector — a transitive dep can execute
+# arbitrary code on your machine during `npm install` without you
+# ever running its code at runtime.
 ignore-scripts=true
 
-# Do not allow Git / GitHub related sources for packages
+# SECURITY: reject git-source dependencies (git+ssh://, github:owner/repo,
+# etc.). Git deps can ship their own .npmrc that overrides the path to
+# the npm binary, achieving arbitrary code execution at install time —
+# bypassing ignore-scripts entirely. This will be the default in npm 12.
 allow-git=none
 
-# Require at least 30 days since package release
+# SECURITY: refuse to install package versions younger than 30 days.
+# Gives the community time to spot and yank hijacked releases before
+# they reach your install. Value is in days.
 min-release-age=30
