@@ -14,7 +14,7 @@ ignore-scripts=true
 # bypassing ignore-scripts entirely. This will be the default in npm 12.
 allow-git=none
 
-# SECURITY: refuse to install package versions younger than 30 days.
+# SECURITY: block packages newer than 30 days (43200 minutes).
 # Gives the community time to spot and yank hijacked releases before
 # they reach your install. Value is in days.
 min-release-age=30
