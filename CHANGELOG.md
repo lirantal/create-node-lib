@@ -1,3 +1,10 @@
+## [2.19.1](https://github.com/lirantal/create-node-lib/compare/v2.19.0...v2.19.1) (2026-05-15)
+
+
+### Bug Fixes
+
+* move package manager constraints to engines ([#48](https://github.com/lirantal/create-node-lib/issues/48)) ([f39e97e](https://github.com/lirantal/create-node-lib/commit/f39e97efad3b5e76babaeb7febbdd54182c4988e))
+
 # [2.19.0](https://github.com/lirantal/create-node-lib/compare/v2.18.0...v2.19.0) (2026-05-15)
 
 
