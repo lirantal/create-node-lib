@@ -1,30 +1,56 @@
 # npm security best practices
 # Source: https://github.com/lirantal/npm-security-best-practices
 
-
-# Require at least 30 days since package release (specified in minutes)
+# SECURITY: block packages newer than 30 days (43200 minutes).
+# Gives the community time to spot and yank hijacked releases
+# before they reach your install.
 minimumReleaseAge: 43200
 
-# Fail if a package's trust level has decreased (pnpm 10.21+)
+# SECURITY: reject a version whose publishing trust signals
+# (npm provenance, trusted-publisher status, registry signatures)
+# have regressed from prior releases. Catches account-takeover
+# attacks where the attacker can't reproduce the legitimate CI
+# pipeline that produced earlier provenance.
 trustPolicy: no-downgrade
 
-# Allow specific packages or versions to bypass the check when needed
-# example:
+# Per-package or per-version exemptions for legitimate trust
+# regressions (e.g. a maintainer who genuinely switched CI providers).
+# Keep empty; add entries only with a written justification, and
+# prefer a specific version range over allowing an entire package.
+# Example:
 # trustPolicyExclude:
 #   - 'chokidar@4.0.3'
 #   - 'webpack@4.47.0 || 5.102.1'
 
-# Ignore the check for packages published more than 30 days ago (pnpm 10.27+)
-# Useful for older packages that pre-date provenance support
-trustPolicyIgnoreAfter: 43200
+# Disabled intentionally. Skipping the trust check for older
+# versions sounds useful for genuinely pre-provenance packages
+# (npm provenance launched April 2023), but any value near
+# minimumReleaseAge nullifies trustPolicy entirely — every
+# installable version becomes exempt. Use trustPolicyExclude
+# above for legitimate legacy cases instead.
+# trustPolicyIgnoreAfter: 43200
 
+# SECURITY: block install scripts by default.
+# Explicit allow-list only. Postinstall scripts are a primary
+# malware delivery vector for transitive dependencies.
+# Keep this list small and only enable packages whose postinstall
+# is genuinely required.
 allowBuilds:
-  esbuild: true 
+  # Native bundler; postinstall fetches the platform-specific binary.
+  esbuild: true
+  # Native bundler; postinstall fetches the platform-specific binary.
   rolldown: true
+  # Native module resolver used by some toolchains.
   unrs-resolver: true
 
-# Strictly enforce build dependencies, otherwise pnpm will error
+# SECURITY: fail the install if a dependency wants to run a build
+# script that isn't in the allow-list above. Without this, new
+# postinstall scripts get silently skipped — you'd never know to
+# audit them.
 strictDepBuilds: true
 
-# Block exotic subdependencies such as those pulled from  Git sources 
+# SECURITY: reject dependencies sourced from git URLs, tarball
+# URLs, or local paths. These bypass registry signing, provenance,
+# and yanking, and have been weaponized to deliver malware through
+# innocent-looking transitive deps.
 blockExoticSubdeps: true
