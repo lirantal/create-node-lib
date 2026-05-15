@@ -75,6 +75,9 @@ describe('all the template files are accountable for', () => {
     expect(pkg.author.email).toBe(mockUserEmail)
     expect(pkg.homepage).toBe(mockProjectRepository)
     expect(pkg.keywords).toEqual(mockProjectKeywords)
+    expect(pkg.engines.pnpm).toBe('>=10.26.0')
+    expect(pkg.engines.npm).toBeUndefined()
+    expect(pkg.packageManager).toBeUndefined()
     // Testing only variable scripts
     expect(pkg.scripts['lint:lockfile']).toEqual(mockScripts['lint:lockfile'])
   })
@@ -116,6 +119,9 @@ describe('all the template files are accountable for', () => {
     const pkg = JSON.parse(await stream.readFile('package.json'))
     // Testing only variable scripts
     expect(pkg.scripts['lint:lockfile']).toEqual(mockScripts['lint:lockfile'])
+    expect(pkg.engines.npm).toBe('>=11.10.0')
+    expect(pkg.engines.pnpm).toBeUndefined()
+    expect(pkg.packageManager).toBeUndefined()
   })
 
   test('Generator creates package.json with prepare script for husky', async () => {

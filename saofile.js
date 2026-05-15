@@ -1,7 +1,11 @@
 'use strict'
 const validateNpmPackageName = require('validate-npm-package-name')
 
-const SUPPORTED_NPM_CLIENTS = ['pnpm', 'npm']
+const PACKAGE_MANAGER_ENGINES = {
+  pnpm: '>=10.26.0',
+  npm: '>=11.10.0'
+}
+const SUPPORTED_NPM_CLIENTS = Object.keys(PACKAGE_MANAGER_ENGINES)
 
 module.exports = {
   description: 'Scaffolding out a node library.',
@@ -100,11 +104,9 @@ module.exports = {
             'lint:lockfile'
           ] = `lockfile-lint --path ${lockfile} --validate-https --allowed-hosts npm`
           data.scripts['lint'] = `eslint . && ${npmClient} run lint:lockfile && ${npmClient} run lint:markdown`
+          data.engines[npmClient] = PACKAGE_MANAGER_ENGINES[npmClient]
           data['lint-staged'] = {
             '**/*.{js,json}': [`${npmClient} run lint:fix`]
-          }
-          if (npmClient !== 'pnpm') {
-            delete data.packageManager
           }
           return data
         }
