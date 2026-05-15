@@ -1,3 +1,10 @@
+## [2.19.3](https://github.com/lirantal/create-node-lib/compare/v2.19.2...v2.19.3) (2026-05-15)
+
+
+### Bug Fixes
+
+* description for security clearer ([b43794a](https://github.com/lirantal/create-node-lib/commit/b43794a5ea311cbf07eaf22a91cc8b2b1b793283))
+
 ## [2.19.2](https://github.com/lirantal/create-node-lib/compare/v2.19.1...v2.19.2) (2026-05-15)
 
 
