@@ -13,7 +13,7 @@ describe('all the template files are accountable for', () => {
     expect(stream.fileList).toContain('.github/ISSUE_TEMPLATE/3-help.md')
     expect(stream.fileList).toContain('.github/PULL_REQUEST_TEMPLATE.md')
     expect(stream.fileList).toContain('.github/CODE_OF_CONDUCT.md')
-    expect(stream.fileList).toContain('.github/CONTRIBUTING.md')
+    expect(stream.fileList).toContain('CONTRIBUTING.md')
   })
 
   test('generator contains project files', async () => {
