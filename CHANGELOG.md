@@ -1,3 +1,10 @@
+## [2.19.8](https://github.com/lirantal/create-node-lib/compare/v2.19.7...v2.19.8) (2026-05-23)
+
+
+### Bug Fixes
+
+* Update devcontainer.json with new feature versions ([c2ef584](https://github.com/lirantal/create-node-lib/commit/c2ef5842e49f9f21e96f1e73b8a3cee244a40769))
+
 ## [2.19.7](https://github.com/lirantal/create-node-lib/compare/v2.19.6...v2.19.7) (2026-05-23)
 
 
