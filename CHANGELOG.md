@@ -1,3 +1,10 @@
+## [2.19.7](https://github.com/lirantal/create-node-lib/compare/v2.19.6...v2.19.7) (2026-05-23)
+
+
+### Bug Fixes
+
+* formatting in tsconfig.json ([6499050](https://github.com/lirantal/create-node-lib/commit/64990505a53b1d1b7ed79b9bb01ee925f81d80c5))
+
 ## [2.19.6](https://github.com/lirantal/create-node-lib/compare/v2.19.5...v2.19.6) (2026-05-18)
 
 ## [2.19.5](https://github.com/lirantal/create-node-lib/compare/v2.19.4...v2.19.5) (2026-05-17)
