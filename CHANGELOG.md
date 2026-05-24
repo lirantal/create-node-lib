@@ -1,3 +1,10 @@
+## [2.19.9](https://github.com/lirantal/create-node-lib/compare/v2.19.8...v2.19.9) (2026-05-24)
+
+
+### Bug Fixes
+
+* Change event trigger from pull_request_target to pull_request ([f1e26db](https://github.com/lirantal/create-node-lib/commit/f1e26db2c25e9b857e9514d8b21795c7b2a46ae1))
+
 ## [2.19.8](https://github.com/lirantal/create-node-lib/compare/v2.19.7...v2.19.8) (2026-05-23)
 
 
