@@ -48,11 +48,11 @@
   },
   "dependencies": {
     "sao": "^1.7.1",
-    "semantic-release": "^25.0.2",
     "validate-npm-package-name": "^5.0.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.4.2",
+    "semantic-release": "^25.0.2",
     "@commitlint/config-conventional": "^17.4.2",
     "@semantic-release/changelog": "^6.0.2",
     "@semantic-release/commit-analyzer": "^13.0.1",
