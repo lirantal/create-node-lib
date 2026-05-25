@@ -48,7 +48,6 @@
   },
   "dependencies": {
     "sao": "^1.7.1",
-    "semantic-release": "^25.0.2",
     "validate-npm-package-name": "^5.0.0"
   },
   "devDependencies": {
@@ -78,7 +77,8 @@
     "lint-staged": "^13.1.0",
     "lockfile-lint": "^4.10.0",
     "open-cli": "^7.1.0",
-    "prettier": "^2.8.3"
+    "prettier": "^2.8.3",
+    "semantic-release": "^25.0.2"
   },
   "jest": {
     "testEnvironment": "node",
