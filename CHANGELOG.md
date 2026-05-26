@@ -1,3 +1,10 @@
+## [2.19.10](https://github.com/lirantal/create-node-lib/compare/v2.19.9...v2.19.10) (2026-05-26)
+
+
+### Bug Fixes
+
+* harden template GitHub Actions workflows and package scripts ([#51](https://github.com/lirantal/create-node-lib/issues/51)) ([9c91c30](https://github.com/lirantal/create-node-lib/commit/9c91c3089239122673394a853142c4527a3c8d96))
+
 ## [2.19.9](https://github.com/lirantal/create-node-lib/compare/v2.19.8...v2.19.9) (2026-05-24)
 
 
