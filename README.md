@@ -12,7 +12,6 @@
   <a href="https://www.npmjs.org/package/create-node-lib"><img src="https://badgen.net/npm/dt/create-node-lib"alt="downloads"/></a>
   <a href="./SECURITY.md"><img src="https://img.shields.io/badge/Security-Responsible%20Disclosure-yellow.svg" alt="Responsible Disclosure Policy" /></a>
   <a href="https://github.com/saojs/awesome-sao"><img src="https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg" alt="Awesome"/></a>
-  <a href="https://snyk.io/advisor/npm-package/create-node-lib"><img src="https://snyk.io/advisor/npm-package/create-node-lib/badge.svg" alt="create-node-lib"></a>
 </p>
 
 # About
