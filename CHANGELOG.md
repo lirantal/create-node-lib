@@ -1,3 +1,10 @@
+## [2.19.12](https://github.com/lirantal/create-node-lib/compare/v2.19.11...v2.19.12) (2026-06-06)
+
+
+### Bug Fixes
+
+* Migrate template lint toolchain to ESLint 10 and remove lockfile-lint from generated projects ([#52](https://github.com/lirantal/create-node-lib/issues/52)) ([7294c49](https://github.com/lirantal/create-node-lib/commit/7294c491a0e46cd996c1969375629494eeeaae88))
+
 ## [2.19.11](https://github.com/lirantal/create-node-lib/compare/v2.19.10...v2.19.11) (2026-05-28)
 
 ## [2.19.10](https://github.com/lirantal/create-node-lib/compare/v2.19.9...v2.19.10) (2026-05-26)
