@@ -45,10 +45,6 @@ describe('all the template files are accountable for', () => {
     const mockUsername = 'alice'
     const mockUserEmail = 'alice@inchains.com'
     const mockProjectRepository = 'https://www.github.com/alice/inchains.git'
-    const mockScripts = {
-      'lint:lockfile':
-        'lockfile-lint --path pnpm-lock.yaml --validate-https --allowed-hosts npm'
-    }
 
     const stream = await sao.mock(
       { generator: template },
@@ -78,8 +74,8 @@ describe('all the template files are accountable for', () => {
     expect(pkg.engines.pnpm).toBe('>=10.26.0')
     expect(pkg.engines.npm).toBeUndefined()
     expect(pkg.packageManager).toBeUndefined()
-    // Testing only variable scripts
-    expect(pkg.scripts['lint:lockfile']).toEqual(mockScripts['lint:lockfile'])
+    expect(pkg.scripts.lint).toBe('eslint . && pnpm run lint:markdown')
+    expect(pkg.scripts['lint:lockfile']).toBeUndefined()
   })
 
   test('Generator includes pnpm-workspace.yaml when pnpm is selected', async () => {
@@ -105,10 +101,6 @@ describe('all the template files are accountable for', () => {
   })
 
   test('Generator input creates correct package.json scripts with npm as client', async () => {
-    const mockScripts = {
-      'lint:lockfile': 'lockfile-lint --path package-lock.json --validate-https --allowed-hosts npm'
-    }
-
     const stream = await sao.mock(
       { generator: template },
       {
@@ -117,8 +109,8 @@ describe('all the template files are accountable for', () => {
     )
 
     const pkg = JSON.parse(await stream.readFile('package.json'))
-    // Testing only variable scripts
-    expect(pkg.scripts['lint:lockfile']).toEqual(mockScripts['lint:lockfile'])
+    expect(pkg.scripts.lint).toBe('eslint . && npm run lint:markdown')
+    expect(pkg.scripts['lint:lockfile']).toBeUndefined()
     expect(pkg.engines.npm).toBe('>=11.10.0')
     expect(pkg.engines.pnpm).toBeUndefined()
     expect(pkg.packageManager).toBeUndefined()

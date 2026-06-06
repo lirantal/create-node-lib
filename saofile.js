@@ -89,7 +89,6 @@ module.exports = {
   },
   actions() {
     const npmClient = this.answers.npmClient
-    const lockfile = npmClient === 'pnpm' ? 'pnpm-lock.yaml' : 'package-lock.json'
     return [
       {
         type: 'add',
@@ -100,10 +99,8 @@ module.exports = {
         type: 'modify',
         files: 'package.json',
         handler(data, filepath) {
-          data.scripts[
-            'lint:lockfile'
-          ] = `lockfile-lint --path ${lockfile} --validate-https --allowed-hosts npm`
-          data.scripts['lint'] = `eslint . && ${npmClient} run lint:lockfile && ${npmClient} run lint:markdown`
+          delete data.scripts['lint:lockfile']
+          data.scripts.lint = `eslint . && ${npmClient} run lint:markdown`
           data.engines[npmClient] = PACKAGE_MANAGER_ENGINES[npmClient]
           data['lint-staged'] = {
             '**/*.{js,json}': [`${npmClient} run lint:fix`]
