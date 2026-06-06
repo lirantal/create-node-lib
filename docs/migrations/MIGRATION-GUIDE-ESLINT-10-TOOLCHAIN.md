@@ -31,6 +31,10 @@ The migration applies to the generated project template and generator wiring:
    - `npm run lint`
    - `npm test`
 
+## Node version alignment note
+
+The template advertises Node `>=24.0.0` in `engines`. The CI matrix is reduced to `24.x` to align checks with the declared support target and avoid validating unsupported runtime versions.
+
 ## Behavioral changes
 
 - Generated projects now run lint as:
