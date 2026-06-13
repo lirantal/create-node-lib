@@ -6,6 +6,7 @@ import tseslint from 'typescript-eslint'
 
 export default defineConfig([
   globalIgnores([
+    '__tests__/**/*.ts',
     'dist/**',
     'coverage/**',
     'node_modules/**',
