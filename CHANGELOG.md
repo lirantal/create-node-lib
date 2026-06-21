@@ -1,3 +1,10 @@
+## [2.19.13](https://github.com/lirantal/create-node-lib/compare/v2.19.12...v2.19.13) (2026-06-21)
+
+
+### Bug Fixes
+
+* Uupdate npmrc for engine-strict for npm ([7192e96](https://github.com/lirantal/create-node-lib/commit/7192e96dcd41d708b65d9a4962788a8708332389))
+
 ## [2.19.12](https://github.com/lirantal/create-node-lib/compare/v2.19.11...v2.19.12) (2026-06-06)
 
 
