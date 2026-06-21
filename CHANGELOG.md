@@ -1,3 +1,10 @@
+## [2.19.15](https://github.com/lirantal/create-node-lib/compare/v2.19.14...v2.19.15) (2026-06-21)
+
+
+### Bug Fixes
+
+* update README.md in template to include proper CI yaml naming convention for badge ([e12305d](https://github.com/lirantal/create-node-lib/commit/e12305d7c0b991c6a303cda6e324fead5693d625))
+
 ## [2.19.14](https://github.com/lirantal/create-node-lib/compare/v2.19.13...v2.19.14) (2026-06-21)
 
 
