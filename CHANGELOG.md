@@ -1,3 +1,10 @@
+## [2.19.14](https://github.com/lirantal/create-node-lib/compare/v2.19.13...v2.19.14) (2026-06-21)
+
+
+### Bug Fixes
+
+* update ci.yml for new codecov version ([2e77e68](https://github.com/lirantal/create-node-lib/commit/2e77e689b58691d554cc2736b47ee380a485dbc0))
+
 ## [2.19.13](https://github.com/lirantal/create-node-lib/compare/v2.19.12...v2.19.13) (2026-06-21)
 
 
