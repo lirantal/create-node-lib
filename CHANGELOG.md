@@ -1,3 +1,11 @@
+## [2.19.17](https://github.com/lirantal/create-node-lib/compare/v2.19.16...v2.19.17) (2026-06-25)
+
+
+### Bug Fixes
+
+* Create RELEASE.md ([42171c3](https://github.com/lirantal/create-node-lib/commit/42171c3f87d6ab84ee728cee1247dd3ea3c9fcc3))
+* Delete template/.github/RELEASE.md ([5d6b91b](https://github.com/lirantal/create-node-lib/commit/5d6b91bff55a50c6fbee86c4f5c3a2ccb274bf46))
+
 ## [2.19.16](https://github.com/lirantal/create-node-lib/compare/v2.19.15...v2.19.16) (2026-06-24)
 
 ## [2.19.15](https://github.com/lirantal/create-node-lib/compare/v2.19.14...v2.19.15) (2026-06-21)
