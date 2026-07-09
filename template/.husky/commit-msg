@@ -1,1 +1,1 @@
-pnpm exec validate-conventional-commit < .git/COMMIT_EDITMSG
+<%= npmClient %> exec validate-conventional-commit < "$1"
