@@ -1,3 +1,10 @@
+## [2.19.20](https://github.com/lirantal/create-node-lib/compare/v2.19.19...v2.19.20) (2026-07-09)
+
+
+### Bug Fixes
+
+* generate portable husky hooks ([#58](https://github.com/lirantal/create-node-lib/issues/58)) ([4f5c48e](https://github.com/lirantal/create-node-lib/commit/4f5c48e4530f41efdbcfccf67e69fa83c85f13cc))
+
 ## [2.19.19](https://github.com/lirantal/create-node-lib/compare/v2.19.18...v2.19.19) (2026-06-25)
 
 
