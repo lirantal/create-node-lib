@@ -122,6 +122,26 @@ describe('all the template files are accountable for', () => {
     expect(pkg.scripts.prepare).toBe('husky')
   })
 
+  test('Generator creates package-manager aware husky hooks', async () => {
+    const pnpmStream = await sao.mock(
+      { generator: template },
+      {
+        npmClient: 'pnpm'
+      }
+    )
+    const npmStream = await sao.mock(
+      { generator: template },
+      {
+        npmClient: 'npm'
+      }
+    )
+
+    expect(await pnpmStream.readFile('.husky/commit-msg')).toBe('pnpm exec validate-conventional-commit < "$1"\n')
+    expect(await pnpmStream.readFile('.husky/pre-commit')).toBe('pnpm exec lint-staged\n')
+    expect(await npmStream.readFile('.husky/commit-msg')).toBe('npm exec validate-conventional-commit < "$1"\n')
+    expect(await npmStream.readFile('.husky/pre-commit')).toBe('npm exec lint-staged\n')
+  })
+
   test('Generator creates changeset config.json file', async () => {
     const stream = await sao.mock({ generator: template })
     expect(stream.fileList).toContain('.changeset/config.json')
