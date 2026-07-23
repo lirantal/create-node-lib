@@ -1,3 +1,5 @@
+## [2.19.21](https://github.com/lirantal/create-node-lib/compare/v2.19.20...v2.19.21) (2026-07-23)
+
 ## [2.19.20](https://github.com/lirantal/create-node-lib/compare/v2.19.19...v2.19.20) (2026-07-09)
 
 
