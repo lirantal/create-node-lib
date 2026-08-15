@@ -1,3 +1,10 @@
+## [2.19.22](https://github.com/lirantal/create-node-lib/compare/v2.19.21...v2.19.22) (2026-08-15)
+
+
+### Bug Fixes
+
+* update template links checker workflow ([1f82678](https://github.com/lirantal/create-node-lib/commit/1f826788eb8a9d696932250ce167b09923fb564c))
+
 ## [2.19.21](https://github.com/lirantal/create-node-lib/compare/v2.19.20...v2.19.21) (2026-07-23)
 
 ## [2.19.20](https://github.com/lirantal/create-node-lib/compare/v2.19.19...v2.19.20) (2026-07-09)
