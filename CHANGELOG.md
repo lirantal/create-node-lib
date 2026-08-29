@@ -1,3 +1,10 @@
+## [2.19.23](https://github.com/lirantal/create-node-lib/compare/v2.19.22...v2.19.23) (2026-08-29)
+
+
+### Bug Fixes
+
+* Add actions permission to automerge workflow ([06ba129](https://github.com/lirantal/create-node-lib/commit/06ba1293abdd9bdcb7e2bc711fe37a4d4759d225))
+
 ## [2.19.22](https://github.com/lirantal/create-node-lib/compare/v2.19.21...v2.19.22) (2026-08-15)
 
 
