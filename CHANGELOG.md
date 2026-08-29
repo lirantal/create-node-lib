@@ -1,3 +1,11 @@
+## [2.19.24](https://github.com/lirantal/create-node-lib/compare/v2.19.23...v2.19.24) (2026-08-29)
+
+
+### Bug Fixes
+
+* Delete template/.devcontainer directory ([2f45400](https://github.com/lirantal/create-node-lib/commit/2f454001f80c6c02f9990317705e363aa8a99704))
+* Update CONTRIBUTING.md for clarity and conciseness ([c3177c3](https://github.com/lirantal/create-node-lib/commit/c3177c3ff5e0bf1ccabfe62421511debd3b81a8e))
+
 ## [2.19.23](https://github.com/lirantal/create-node-lib/compare/v2.19.22...v2.19.23) (2026-08-29)
 
 
