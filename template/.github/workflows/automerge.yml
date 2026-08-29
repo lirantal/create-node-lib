@@ -27,6 +27,7 @@ jobs:
       pull-requests: write
       checks: read
       statuses: read
+      actions: write
     steps:
       - name: Merge eligible pull requests
         uses: lirantal/github-action-automerge@8ea9b60ae1fe716a5128fefa26f3df1ba8417742 # 1.0.1
