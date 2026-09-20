@@ -1,3 +1,11 @@
+## [2.19.25](https://github.com/lirantal/create-node-lib/compare/v2.19.24...v2.19.25) (2026-09-20)
+
+
+### Bug Fixes
+
+* correct markdownlint CLI binary name in template scripts ([dbbcce5](https://github.com/lirantal/create-node-lib/commit/dbbcce5b02e2db19a43eecac9f87474af9db087e))
+* parameterize npmClient in template CI/release/markdown-lint workflows ([01124e9](https://github.com/lirantal/create-node-lib/commit/01124e9f2504350662ccd5780b012d0be79dacc6))
+
 ## [2.19.24](https://github.com/lirantal/create-node-lib/compare/v2.19.23...v2.19.24) (2026-08-29)
 
 
