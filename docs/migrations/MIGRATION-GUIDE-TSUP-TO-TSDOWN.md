@@ -213,7 +213,8 @@ to update any references in `package.json`:
  }
 ```
 
-For this split layout, point the `bin` field at the ESM output:
+For ESM packages (`"type": "module"`) using this split layout, point the `bin`
+field at the ESM output:
 
 ```diff
  "bin": {
@@ -224,6 +225,9 @@ For this split layout, point the `bin` field at the ESM output:
 
 tsdown preserves the shebang (`#!/usr/bin/env node`) and execute permission on
 the generated CLI file.
+
+For CommonJS packages (`"type": "commonjs"`), keep the CLI output and `bin`
+mapping aligned to `.cjs` instead.
 
 ## Step 4: Allow native build scripts (pnpm)
 
