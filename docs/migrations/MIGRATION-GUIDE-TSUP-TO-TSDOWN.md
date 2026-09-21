@@ -170,6 +170,8 @@ export default defineConfig([
 
 Key differences:
 
+- Use `defineConfig([...])` with two config objects (library + CLI) instead of a
+  single shared entry list
 - `entryPoints` becomes `entry`
 - `cjsInterop` becomes `cjsDefault`
 - `bundle`, `splitting`, `keepNames`, `skipNodeModulesBundle` are dropped
