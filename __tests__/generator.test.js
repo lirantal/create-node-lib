@@ -1,5 +1,6 @@
 const path = require('path')
 const sao = require('sao')
+const vm = require('vm')
 
 const template = path.join(__dirname, '..')
 
@@ -83,16 +84,36 @@ describe('all the template files are accountable for', () => {
 
     const pkg = JSON.parse(await stream.readFile('package.json'))
     const tsdownConfig = await stream.readFile('tsdown.config.ts')
+    const executableConfig = tsdownConfig
+      .replace("import { defineConfig } from 'tsdown'\n\n", '')
+      .replace('export default defineConfig(', 'module.exports = defineConfig(')
+    const sandbox = {
+      module: { exports: undefined },
+      defineConfig: config => config
+    }
+    vm.runInNewContext(executableConfig, sandbox)
+    const [libraryBuildConfig, cliBuildConfig] = sandbox.module.exports
 
     expect(pkg.bin[pkg.name]).toBe('./dist/bin/cli.mjs')
-    expect(tsdownConfig).toContain("entry: 'src/main.ts'")
-    expect(tsdownConfig).toContain("format: ['cjs', 'esm']")
-    expect(tsdownConfig).toContain('dts: true')
-    expect(tsdownConfig).toContain("entry: 'src/bin/cli.ts'")
-    expect(tsdownConfig).toContain("format: ['esm']")
-    expect(tsdownConfig).toContain('dts: false')
-    expect(tsdownConfig).toContain("outDir: 'dist/bin/'")
-    expect(tsdownConfig).toContain('clean: false')
+    expect(sandbox.module.exports).toHaveLength(2)
+    expect(libraryBuildConfig).toMatchObject({
+      entry: 'src/main.ts',
+      format: ['cjs', 'esm'],
+      dts: true,
+      outDir: 'dist/',
+      clean: true,
+      cjsDefault: true,
+      fixedExtension: true
+    })
+    expect(cliBuildConfig).toMatchObject({
+      entry: 'src/bin/cli.ts',
+      format: ['esm'],
+      dts: false,
+      outDir: 'dist/bin/',
+      clean: false,
+      cjsDefault: true,
+      fixedExtension: true
+    })
   })
 
   test('Generator markdownlint config allows repeated non-sibling headings', async () => {
