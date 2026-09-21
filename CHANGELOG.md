@@ -1,3 +1,10 @@
+## [2.19.26](https://github.com/lirantal/create-node-lib/compare/v2.19.25...v2.19.26) (2026-09-21)
+
+
+### Bug Fixes
+
+* split scaffold CLI build to ESM-only and allow Changesets changelog heading reuse 🤖🤖🤖 ([#59](https://github.com/lirantal/create-node-lib/issues/59)) ([ea1345c](https://github.com/lirantal/create-node-lib/commit/ea1345c0a15206113f732b1490e70907a9b561ab))
+
 ## [2.19.25](https://github.com/lirantal/create-node-lib/compare/v2.19.24...v2.19.25) (2026-09-20)
 
 
