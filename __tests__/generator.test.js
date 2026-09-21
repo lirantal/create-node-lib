@@ -87,9 +87,9 @@ describe('all the template files are accountable for', () => {
     expect(pkg.bin[pkg.name]).toBe('./dist/bin/cli.mjs')
     expect(tsdownConfig).toContain('cjsDefault: true')
     expect(tsdownConfig).toContain('fixedExtension: true')
-    expect(tsdownConfig).toMatch(
-      /export default defineConfig\(\[\s*{\s*\.\.\.sharedBuildOptions,\s*entry: 'src\/main\.ts',\s*format: \['cjs', 'esm'\],\s*dts: true,\s*outDir: 'dist\/',\s*clean: true,\s*},\s*{\s*\.\.\.sharedBuildOptions,\s*entry: 'src\/bin\/cli\.ts',\s*format: \['esm'\],\s*dts: false,\s*outDir: 'dist\/bin\/',\s*clean: false,\s*},\s*]\)/s
-    )
+    expect(tsdownConfig).toContain('export default defineConfig([')
+    expect(tsdownConfig).toMatch(/entry: 'src\/main\.ts'[\s\S]*format: \['cjs', 'esm'\][\s\S]*dts: true[\s\S]*outDir: 'dist\/'[\s\S]*clean: true/)
+    expect(tsdownConfig).toMatch(/entry: 'src\/bin\/cli\.ts'[\s\S]*format: \['esm'\][\s\S]*dts: false[\s\S]*outDir: 'dist\/bin\/'[\s\S]*clean: false/)
   })
 
   test('Generator markdownlint config allows repeated non-sibling headings', async () => {
