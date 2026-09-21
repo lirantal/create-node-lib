@@ -78,6 +78,31 @@ describe('all the template files are accountable for', () => {
     expect(pkg.scripts['lint:lockfile']).toBeUndefined()
   })
 
+  test('Generator configures ESM CLI bin and split tsdown builds', async () => {
+    const stream = await sao.mock({ generator: template })
+
+    const pkg = JSON.parse(await stream.readFile('package.json'))
+    const tsdownConfig = await stream.readFile('tsdown.config.ts')
+
+    expect(pkg.bin[pkg.name]).toBe('./dist/bin/cli.mjs')
+    expect(tsdownConfig).toContain("entry: 'src/main.ts'")
+    expect(tsdownConfig).toContain("format: ['cjs', 'esm']")
+    expect(tsdownConfig).toContain('dts: true')
+    expect(tsdownConfig).toContain("entry: 'src/bin/cli.ts'")
+    expect(tsdownConfig).toContain("format: ['esm']")
+    expect(tsdownConfig).toContain('dts: false')
+    expect(tsdownConfig).toContain("outDir: 'dist/bin/'")
+    expect(tsdownConfig).toContain('clean: false')
+  })
+
+  test('Generator markdownlint config allows repeated non-sibling headings', async () => {
+    const stream = await sao.mock({ generator: template })
+    const markdownlintConfig = await stream.readFile('.github/.markdownlint.yml')
+
+    expect(markdownlintConfig).toContain('MD024:')
+    expect(markdownlintConfig).toContain('siblings_only: true')
+  })
+
   test('Generator includes pnpm-workspace.yaml when pnpm is selected', async () => {
     const stream = await sao.mock(
       { generator: template },

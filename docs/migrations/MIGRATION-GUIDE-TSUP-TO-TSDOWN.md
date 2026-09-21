@@ -48,7 +48,9 @@ In `package.json`:
 ## Step 2: Replace the config file
 
 Delete `tsup.config.ts` and create `tsdown.config.ts`. The config uses
-`defineConfig` imported from `tsdown` instead of `tsup`.
+`defineConfig` imported from `tsdown` instead of `tsup`. For CLI projects,
+split library and CLI entries so the library can stay dual CJS/ESM while the
+binary entry builds ESM-only.
 
 ### Option mapping reference
 
@@ -135,12 +137,7 @@ export default defineConfig([
 ```typescript
 import { defineConfig } from 'tsdown'
 
-export default defineConfig({
-  entry: ['src/main.ts', 'src/bin/cli.ts'],
-  format: ['cjs', 'esm'],
-  dts: true,
-  outDir: 'dist/',
-  clean: true,
+const sharedBuildOptions = {
   sourcemap: false,
   treeshake: false,
   target: 'es2022',
@@ -149,16 +146,37 @@ export default defineConfig({
   cjsDefault: true,
   fixedExtension: true,
   minify: false,
-})
+}
+
+export default defineConfig([
+  {
+    ...sharedBuildOptions,
+    entry: 'src/main.ts',
+    format: ['cjs', 'esm'],
+    dts: true,
+    outDir: 'dist/',
+    clean: true,
+  },
+  {
+    ...sharedBuildOptions,
+    entry: 'src/bin/cli.ts',
+    format: ['esm'],
+    dts: false,
+    outDir: 'dist/bin/',
+    clean: false,
+  },
+])
 ```
 
 Key differences:
 
-- No array wrapper needed (single config object, not `defineConfig([...])`)
 - `entryPoints` becomes `entry`
 - `cjsInterop` becomes `cjsDefault`
 - `bundle`, `splitting`, `keepNames`, `skipNodeModulesBundle` are dropped
 - `outExtension` function replaced by `fixedExtension: true`
+- `src/main.ts` remains dual-format while `src/bin/cli.ts` is ESM-only
+- CLI output is written to `dist/bin/` and should be referenced as `.mjs` in
+  `package.json#bin`
 
 ### CommonJS packages
 
@@ -193,9 +211,17 @@ to update any references in `package.json`:
  }
 ```
 
-The `bin` field pointing to `.cjs` files does not need to change -- tsdown
-produces `.cjs` files with the shebang (`#!/usr/bin/env node`) intact and
-automatically grants execute permission.
+For this split layout, point the `bin` field at the ESM output:
+
+```diff
+ "bin": {
+-  "your-cli": "./dist/bin/cli.cjs"
++  "your-cli": "./dist/bin/cli.mjs"
+ }
+```
+
+tsdown preserves the shebang (`#!/usr/bin/env node`) and execute permission on
+the generated CLI file.
 
 ## Step 4: Allow native build scripts (pnpm)
 
@@ -253,16 +279,15 @@ pnpm run build
 # Verify output files exist
 ls dist/
 
-# Expected output structure for a dual ESM/CJS CLI:
+# Expected output structure for a dual-format library + ESM-only CLI:
 # dist/main.mjs          (ESM entry)
 # dist/main.cjs          (CJS entry)
 # dist/main.d.mts        (ESM declarations)
 # dist/main.d.cts        (CJS declarations)
 # dist/bin/cli.mjs       (ESM CLI)
-# dist/bin/cli.cjs       (CJS CLI, with shebang)
 
 # Test the CLI binary
-node dist/bin/cli.cjs
+node dist/bin/cli.mjs
 
 # Run lint
 pnpm run lint
@@ -323,7 +348,7 @@ the bundled output still works correctly.
 - [ ] Run `pnpm run build` and verify output files
 - [ ] Run `pnpm run lint` and confirm no regressions
 - [ ] Run `pnpm run test` and confirm all tests pass
-- [ ] Test the CLI binary manually (`node dist/bin/cli.cjs`)
+- [ ] Test the CLI binary manually (`node dist/bin/cli.mjs`)
 
 ## References
 

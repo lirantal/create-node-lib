@@ -5,7 +5,7 @@
   "types": "dist/main.d.mts",
   "type": "module",
   "bin": {
-    "<%= projectName %>": "./dist/bin/cli.cjs"
+    "<%= projectName %>": "./dist/bin/cli.mjs"
   },
   "exports": {
     ".": {

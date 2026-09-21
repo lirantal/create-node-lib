@@ -1,11 +1,6 @@
 import { defineConfig } from 'tsdown'
 
-export default defineConfig({
-  entry: ['src/main.ts', 'src/bin/cli.ts'],
-  format: ['cjs', 'esm'],
-  dts: true,
-  outDir: 'dist/',
-  clean: true,
+const sharedBuildOptions = {
   sourcemap: false,
   treeshake: false,
   target: 'es2022',
@@ -14,4 +9,23 @@ export default defineConfig({
   cjsDefault: true,
   fixedExtension: true,
   minify: false,
-})
+}
+
+export default defineConfig([
+  {
+    ...sharedBuildOptions,
+    entry: 'src/main.ts',
+    format: ['cjs', 'esm'],
+    dts: true,
+    outDir: 'dist/',
+    clean: true,
+  },
+  {
+    ...sharedBuildOptions,
+    entry: 'src/bin/cli.ts',
+    format: ['esm'],
+    dts: false,
+    outDir: 'dist/bin/',
+    clean: false,
+  },
+])
