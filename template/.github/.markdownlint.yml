@@ -5,5 +5,10 @@ MD013:
   code_blocks: false
   tables: false
 
+# Changesets repeats headings like "Patch Changes" under different versions.
+# Keep duplicate checks for sibling headings, but allow repeats across sections.
+MD024:
+  siblings_only: true
+
 # Do not enforce line length in markdown files
 line_length: false
