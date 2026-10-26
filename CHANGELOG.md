@@ -1,3 +1,10 @@
+## [2.19.27](https://github.com/lirantal/create-node-lib/compare/v2.19.26...v2.19.27) (2026-10-26)
+
+
+### Bug Fixes
+
+* separate major development updates in template ([#60](https://github.com/lirantal/create-node-lib/issues/60)) ([13d2f3a](https://github.com/lirantal/create-node-lib/commit/13d2f3aaac7e104443d67069d60bff2e37a1c7f5))
+
 ## [2.19.26](https://github.com/lirantal/create-node-lib/compare/v2.19.25...v2.19.26) (2026-09-21)
 
 
