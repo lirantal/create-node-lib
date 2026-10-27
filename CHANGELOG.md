@@ -1,3 +1,10 @@
+## [2.19.28](https://github.com/lirantal/create-node-lib/compare/v2.19.27...v2.19.28) (2026-10-27)
+
+
+### Bug Fixes
+
+* **template:** update automerge action to 1.0.2 🤖🤖🤖 ([#61](https://github.com/lirantal/create-node-lib/issues/61)) ([c932f0c](https://github.com/lirantal/create-node-lib/commit/c932f0cca98959329fbc61469d5c2e9e5a9ccf0e))
+
 ## [2.19.27](https://github.com/lirantal/create-node-lib/compare/v2.19.26...v2.19.27) (2026-10-26)
 
 
