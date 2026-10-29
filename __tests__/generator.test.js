@@ -1,5 +1,8 @@
 const path = require('path')
 const sao = require('sao')
+const fs = require('fs')
+const os = require('os')
+const { spawnSync } = require('child_process')
 
 const template = path.join(__dirname, '..')
 
@@ -99,6 +102,47 @@ describe('all the template files are accountable for', () => {
     expect(markdownlintConfig).toContain('MD024:')
     expect(markdownlintConfig).toContain('siblings_only: true')
   })
+
+  /* eslint-disable security/detect-non-literal-fs-filename -- Fixed fixture paths are confined to a fresh temporary directory. */
+  test.each(['npm', 'pnpm'])('Generated %s Markdown commands ignore dependencies but still lint workspace docs', async npmClient => {
+    const stream = await sao.mock({ generator: template }, { npmClient })
+    const pkg = JSON.parse(await stream.readFile('package.json'))
+    const cwd = fs.mkdtempSync(path.join(os.tmpdir(), 'create-node-lib-markdown-'))
+    const cli = require.resolve('markdownlint-cli/markdownlint.js')
+    const invalidMarkdown = `${'word '.repeat(220).trim()}\n`
+    const dependencyFiles = [
+      'node_modules/dependency/README.md',
+      'packages/workspace/node_modules/dependency/README.md',
+      'node_modules/.pnpm/dependency/node_modules/dependency/README.md'
+    ]
+    const writeFile = (name, content) => {
+      fs.mkdirSync(path.dirname(path.join(cwd, name)), { recursive: true })
+      fs.writeFileSync(path.join(cwd, name), content)
+    }
+
+    try {
+      writeFile('.github/.markdownlint.yml', await stream.readFile('.github/.markdownlint.yml'))
+      dependencyFiles.forEach(name => writeFile(name, invalidMarkdown))
+      for (const script of ['lint:markdown', 'lint:markdown:fix']) {
+        writeFile('packages/workspace/README.md', '# Workspace\n')
+        const args = pkg.scripts[script].match(/'[^']*'|\S+/g).slice(1)
+          .map(arg => arg.startsWith("'") ? arg.slice(1, -1) : arg)
+        const run = () => spawnSync(process.execPath, [cli, ...args], { cwd, encoding: 'utf8' })
+        const dependenciesOnly = run()
+        expect(dependenciesOnly.stderr).toBe('')
+        expect(dependenciesOnly.status).toBe(0)
+        dependencyFiles.forEach(name => expect(fs.readFileSync(path.join(cwd, name), 'utf8')).toBe(invalidMarkdown))
+
+        writeFile('packages/workspace/README.md', invalidMarkdown)
+        const projectError = run()
+        expect(projectError.status).toBe(1)
+        expect(projectError.stderr).toContain('packages/workspace/README.md')
+      }
+    } finally {
+      fs.rmSync(cwd, { recursive: true, force: true })
+    }
+  })
+  /* eslint-enable security/detect-non-literal-fs-filename */
 
   test('Generator includes pnpm-workspace.yaml when pnpm is selected', async () => {
     const stream = await sao.mock(
