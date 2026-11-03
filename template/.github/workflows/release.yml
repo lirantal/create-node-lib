@@ -28,6 +28,10 @@ jobs:
         with:
           node-version: 24.x
           cache: '<%= npmClient %>'
+<% if (npmClient === 'npm') { -%>
+      - name: Set up pinned npm
+        run: bash .github/scripts/setup-npm.sh
+<% } -%>
       - name: install dependencies
         run: <%= npmClient === 'pnpm' ? 'pnpm install --frozen-lockfile' : 'npm ci' %>
       - name: build project
