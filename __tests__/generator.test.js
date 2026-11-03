@@ -1,5 +1,7 @@
 const path = require('path')
 const sao = require('sao')
+// Mock process launches so these tests never install packages.
+const childProcess = require('child_process') // eslint-disable-line security/detect-child-process
 
 const template = path.join(__dirname, '..')
 
@@ -73,7 +75,7 @@ describe('all the template files are accountable for', () => {
     expect(pkg.keywords).toEqual(mockProjectKeywords)
     expect(pkg.engines.pnpm).toBe('>=10.26.0')
     expect(pkg.engines.npm).toBeUndefined()
-    expect(pkg.packageManager).toBeUndefined()
+    expect(pkg.packageManager).toBe('pnpm@12.9.0')
     expect(pkg.scripts.lint).toBe('eslint . && pnpm run lint:markdown')
     expect(pkg.scripts['lint:lockfile']).toBeUndefined()
   })
@@ -135,7 +137,31 @@ describe('all the template files are accountable for', () => {
     expect(pkg.scripts['lint:lockfile']).toBeUndefined()
     expect(pkg.engines.npm).toBe('>=11.10.0')
     expect(pkg.engines.pnpm).toBeUndefined()
-    expect(pkg.packageManager).toBeUndefined()
+    expect(pkg.packageManager).toBe('npm@11.21.0')
+  })
+
+  test.each(['npm', 'pnpm'])('Generated %s workflows consume the manifest pin', async npmClient => {
+    const stream = await sao.mock({ generator: template }, { npmClient })
+    const pkg = JSON.parse(await stream.readFile('package.json'))
+    expect(pkg.packageManager.split('@')[0]).toBe(npmClient)
+    expect(pkg.packageManager.split('@')[1]).toMatch(/^[0-9]+\.[0-9]+\.[0-9]+$/)
+    expect(pkg.devEngines).toBeUndefined()
+    for (const file of ['ci', 'release', 'markdown-lint']) {
+      const workflow = await stream.readFile(`.github/workflows/${file}.yml`)
+      if (npmClient === 'npm') {
+        expect(workflow).toContain('bash .github/scripts/setup-npm.sh')
+      } else {
+        expect(workflow).toContain('pnpm/action-setup@')
+        expect(workflow).not.toContain('setup-npm.sh')
+        expect(workflow).not.toMatch(/version: (latest|12\\.)/)
+      }
+    }
+    expect(await stream.readFile('.npmrc')).toContain('min-release-age=30')
+    if (npmClient === 'pnpm') {
+      expect(await stream.readFile('pnpm-workspace.yaml')).toContain('minimumReleaseAge: 43200')
+    } else {
+      expect(await stream.readFile('.github/scripts/setup-npm.sh')).toContain('--userconfig')
+    }
   })
 
   test('Generator creates package.json with prepare script for husky', async () => {
@@ -224,5 +250,46 @@ describe('all the template files are accountable for', () => {
 
     const changesetConfig = JSON.parse(await stream.readFile('.changeset/config.json'))
     expect(changesetConfig.changelog[1].repo).toBe('')
+  })
+})
+
+describe('package-manager setup during generation', () => {
+  afterEach(() => jest.restoreAllMocks())
+
+  function context (npmClient) {
+    return {
+      outDir: '/tmp/create-node-lib-pin-test',
+      answers: { npmClient },
+      npmInstall: jest.fn().mockResolvedValue(undefined),
+      showProjectTips: jest.fn(),
+      logger: { tip: jest.fn() }
+    }
+  }
+
+  test('npm generation installs and prepares with the pinned npm executable', async () => {
+    const spawn = jest.spyOn(childProcess, 'spawnSync').mockReturnValue({ status: 0 })
+    const ctx = context('npm')
+    await require('../saofile').completed.call(ctx)
+    const calls = spawn.mock.calls.filter(call => call[0] === 'npm')
+    expect(calls).toHaveLength(2)
+    expect(calls[0][1]).toEqual(['exec', '--yes', '--package=npm@11.21.0', '--', 'npm', 'install'])
+    expect(calls[1][1]).toEqual(['exec', '--yes', '--package=npm@11.21.0', '--', 'npm', 'run', 'prepare'])
+    expect(ctx.npmInstall).not.toHaveBeenCalled()
+  })
+
+  test('npm generation stops if the pinned install fails', async () => {
+    const spawn = jest.spyOn(childProcess, 'spawnSync').mockImplementation(command => ({ status: command === 'npm' ? 1 : 0 }))
+    const ctx = context('npm')
+    await expect(require('../saofile').completed.call(ctx)).rejects.toThrow('Pinned npm setup failed')
+    expect(spawn.mock.calls.filter(call => call[0] === 'npm')).toHaveLength(1)
+    expect(ctx.showProjectTips).not.toHaveBeenCalled()
+  })
+
+  test('pnpm generation retains pnpm installation and preparation', async () => {
+    jest.spyOn(childProcess, 'spawnSync').mockReturnValue({ status: 0 })
+    const ctx = context('pnpm')
+    await require('../saofile').completed.call(ctx)
+    expect(ctx.npmInstall).toHaveBeenNthCalledWith(1, { npmClient: 'pnpm' })
+    expect(ctx.npmInstall).toHaveBeenNthCalledWith(2, { npmClient: 'pnpm', args: ['run', 'prepare'] })
   })
 })

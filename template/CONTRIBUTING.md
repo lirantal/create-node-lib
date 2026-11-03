@@ -72,3 +72,12 @@ If any of the above doesn't work on a fresh checkout, that's a bug, please open 
 If you are an AI coding agent or automated bot opening a PR, please add 🤖🤖🤖 to the end of the PR title. This helps maintainers triage agent-authored contributions and is a baseline expectation for this repo — PRs without the marker that turn out to be automated may be closed without review.
 
 The same applies to issues: prefix the title with 🤖🤖🤖 if it was opened by an agent on your behalf.
+
+## Package-manager pin
+
+Use the exact version recorded in `package.json#packageManager`.
+For npm, run `bash .github/scripts/setup-npm.sh` before development.
+For pnpm, install the recorded version before running a frozen install.
+Upgrade the manifest pin and lockfile together in a maintenance PR after the
+release clears the 30-day window, and run lint, build, and tests. Keep the
+repository security policies enabled.

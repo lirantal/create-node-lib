@@ -5,6 +5,10 @@ const PACKAGE_MANAGER_ENGINES = {
   pnpm: '>=10.26.0',
   npm: '>=11.10.0'
 }
+const PACKAGE_MANAGER_VERSIONS = {
+  pnpm: '12.9.0',
+  npm: '11.21.0'
+}
 const SUPPORTED_NPM_CLIENTS = Object.keys(PACKAGE_MANAGER_ENGINES)
 
 module.exports = {
@@ -102,6 +106,7 @@ module.exports = {
           delete data.scripts['lint:lockfile']
           data.scripts.lint = `eslint . && ${npmClient} run lint:markdown`
           data.engines[npmClient] = PACKAGE_MANAGER_ENGINES[npmClient]
+          data.packageManager = `${npmClient}@${PACKAGE_MANAGER_VERSIONS[npmClient]}`
           data['lint-staged'] = {
             '**/*.{js,json}': [`${npmClient} run lint:fix`]
           }
@@ -115,6 +120,9 @@ module.exports = {
           npmrc: '.npmrc'
         }
       },
+      ...(npmClient === 'pnpm'
+        ? [{ type: 'remove', files: '.github/scripts/setup-npm.sh' }]
+        : []),
       ...(npmClient !== 'pnpm'
         ? [
             {
@@ -134,8 +142,17 @@ module.exports = {
       const remoteUrl = repoUrl.endsWith('.git') ? repoUrl : `${repoUrl}.git`
       spawn('git', ['remote', 'add', 'origin', remoteUrl], { cwd: this.outDir })
     }
-    await this.npmInstall({ npmClient: this.answers.npmClient })
-    await this.npmInstall({ npmClient: this.answers.npmClient, args: ['run', 'prepare'] })
+    if (this.answers.npmClient === 'npm') {
+      // npm does not switch versions from packageManager, so invoke the pin explicitly.
+      for (const args of [['install'], ['run', 'prepare']]) {
+        const result = spawn('npm', ['exec', '--yes', `--package=npm@${PACKAGE_MANAGER_VERSIONS.npm}`, '--', 'npm', ...args], { cwd: this.outDir, stdio: 'inherit' })
+        if (result.error) throw result.error
+        if (result.status !== 0) throw new Error('Pinned npm setup failed')
+      }
+    } else {
+      await this.npmInstall({ npmClient: this.answers.npmClient })
+      await this.npmInstall({ npmClient: this.answers.npmClient, args: ['run', 'prepare'] })
+    }
     this.showProjectTips()
 
     this.logger.tip('You\'re all setup. hack away!')
