@@ -1,5 +1,7 @@
 const path = require('path')
 const sao = require('sao')
+// Mock process launches so these tests never install packages.
+const childProcess = require('child_process') // eslint-disable-line security/detect-child-process
 
 const template = path.join(__dirname, '..')
 
@@ -251,7 +253,6 @@ describe('all the template files are accountable for', () => {
   })
 })
 
-
 describe('package-manager setup during generation', () => {
   afterEach(() => jest.restoreAllMocks())
 
@@ -266,7 +267,7 @@ describe('package-manager setup during generation', () => {
   }
 
   test('npm generation installs and prepares with the pinned npm executable', async () => {
-    const spawn = jest.spyOn(require('child_process'), 'spawnSync').mockReturnValue({ status: 0 })
+    const spawn = jest.spyOn(childProcess, 'spawnSync').mockReturnValue({ status: 0 })
     const ctx = context('npm')
     await require('../saofile').completed.call(ctx)
     const calls = spawn.mock.calls.filter(call => call[0] === 'npm')
@@ -277,7 +278,7 @@ describe('package-manager setup during generation', () => {
   })
 
   test('npm generation stops if the pinned install fails', async () => {
-    const spawn = jest.spyOn(require('child_process'), 'spawnSync').mockImplementation(command => ({ status: command === 'npm' ? 1 : 0 }))
+    const spawn = jest.spyOn(childProcess, 'spawnSync').mockImplementation(command => ({ status: command === 'npm' ? 1 : 0 }))
     const ctx = context('npm')
     await expect(require('../saofile').completed.call(ctx)).rejects.toThrow('Pinned npm setup failed')
     expect(spawn.mock.calls.filter(call => call[0] === 'npm')).toHaveLength(1)
@@ -285,7 +286,7 @@ describe('package-manager setup during generation', () => {
   })
 
   test('pnpm generation retains pnpm installation and preparation', async () => {
-    jest.spyOn(require('child_process'), 'spawnSync').mockReturnValue({ status: 0 })
+    jest.spyOn(childProcess, 'spawnSync').mockReturnValue({ status: 0 })
     const ctx = context('pnpm')
     await require('../saofile').completed.call(ctx)
     expect(ctx.npmInstall).toHaveBeenNthCalledWith(1, { npmClient: 'pnpm' })
