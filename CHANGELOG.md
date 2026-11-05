@@ -1,3 +1,17 @@
+## [2.19.30](https://github.com/lirantal/create-node-lib/compare/v2.19.29...v2.19.30) (2026-11-03)
+
+
+### Bug Fixes
+
+* **generator:** pin package-manager toolchains 🤖🤖🤖 ([#64](https://github.com/lirantal/create-node-lib/issues/64)) ([8c51104](https://github.com/lirantal/create-node-lib/commit/8c511040bcf1cf2eef52b281fa048749ce44b5c3))
+
+## [2.19.29](https://github.com/lirantal/create-node-lib/compare/v2.19.28...v2.19.29) (2026-10-29)
+
+
+### Bug Fixes
+
+* align generated GitHub Actions with maintained CLI projects ([#63](https://github.com/lirantal/create-node-lib/issues/63)) ([2ed394e](https://github.com/lirantal/create-node-lib/commit/2ed394e85653b8fdff9e9e71130110f954dd17dd))
+
 ## [2.19.28](https://github.com/lirantal/create-node-lib/compare/v2.19.27...v2.19.28) (2026-10-27)
 
 

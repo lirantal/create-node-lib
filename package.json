@@ -233,5 +233,6 @@
   },
   "peerDependencies": {
     "node-notifier": "^10.0.1"
-  }
+  },
+  "packageManager": "npm@11.21.0"
 }
