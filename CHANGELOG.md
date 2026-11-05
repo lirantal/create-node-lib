@@ -1,3 +1,10 @@
+## [2.19.31](https://github.com/lirantal/create-node-lib/compare/v2.19.30...v2.19.31) (2026-11-05)
+
+
+### Bug Fixes
+
+* exclude nested dependency Markdown in generated projects ([#62](https://github.com/lirantal/create-node-lib/issues/62)) ([3d70e52](https://github.com/lirantal/create-node-lib/commit/3d70e52a8204cd9be06645b01306c353a88a5227))
+
 ## [2.19.30](https://github.com/lirantal/create-node-lib/compare/v2.19.29...v2.19.30) (2026-11-03)
 
 
