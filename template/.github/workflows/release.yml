@@ -37,12 +37,12 @@ jobs:
       - name: build project
         run: <%= npmClient %> run build
       - name: Create Release Pull Request or Publish to npm
-        uses: changesets/action@63a615b9cd06ba9a3e6d13796c7fbcb080a60a0b # v1.8.0
+        uses: changesets/action@ae32849d5ba541f9ae29e40e22a623bc13562f51 # v2.1.2
         with:
-          publish: <%= npmClient %> run release
-          version: <%= npmClient %> run version
-          commit: "chore: new release"
-          title: "chore: new release candidate"
+          publish-script: <%= npmClient %> run release
+          version-script: <%= npmClient %> run version
+          commit-message: "chore: new release"
+          pr-title: "chore: new release candidate"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_CONFIG_PROVENANCE: true
