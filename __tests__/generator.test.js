@@ -9,6 +9,23 @@ const childProcess = require('child_process') // eslint-disable-line security/de
 const template = path.join(__dirname, '..')
 
 describe('all the template files are accountable for', () => {
+  test.each(['npm', 'pnpm'])('Generated %s release workflow matches Changesets CLI and package scripts', async npmClient => {
+    const stream = await sao.mock({ generator: template }, { npmClient })
+    const pkg = JSON.parse(await stream.readFile('package.json'))
+    const workflow = await stream.readFile('.github/workflows/release.yml')
+
+    expect(pkg.devDependencies['@changesets/cli']).toBe('^3.0.3')
+    expect(pkg.devDependencies.prettier).toBe('3.8.3')
+    expect(workflow).toContain('changesets/action@ae32849d5ba541f9ae29e40e22a623bc13562f51 # v2.1.2')
+    expect(workflow).toContain(`publish-script: ${npmClient} run release`)
+    expect(workflow).toContain(`version-script: ${npmClient} run version`)
+    expect(workflow).toContain('commit-message: "chore: new release"')
+    expect(workflow).toContain('pr-title: "chore: new release candidate"')
+    expect(workflow).not.toMatch(/^\s+(publish|version|commit|title):/m)
+    expect(pkg.scripts.version).toBe('changeset version')
+    expect(pkg.scripts.release).toBe('changeset publish')
+  })
+
   test('generator contains github templates', async () => {
     jest.setTimeout(15000)
     const stream = await sao.mock({ generator: template })

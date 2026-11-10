@@ -9,6 +9,13 @@ Use the command that matches the repository's package manager:
 
 ## Release tooling
 
+The generated workflow uses Changesets CLI v3 with Changesets Action v2.
+Keep these major versions aligned. Action v2 uses `publish-script`,
+`version-script`, `commit-message`, and `pr-title` inputs to invoke the
+configured package scripts and customize the release PR.
+Prettier is installed as a development dependency because Changesets v3
+uses the project's `.prettierrc.json` when formatting release changelogs.
+
 This project uses the [Changesets](https://github.com/changesets/changesets)
 tool to manage semantic versioning and release notes.
 
